@@ -106,7 +106,7 @@ namespace Financial.Internationalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign up in.
+        ///   Looks up a localized string similar to Sign up in Financial.
         /// </summary>
         public static string SignUpFormMessage {
             get {

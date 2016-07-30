@@ -1,6 +1,10 @@
-﻿@if (WebSecurity.IsAuthenticated)
+﻿@using Financial.Internationalization
+@if (WebSecurity.IsAuthenticated)
 {
     <li>
-        <a href="@Url.RouteUrl("Start")"><span class="fa fa-home"></span></a>
+        <a href="@Url.RouteUrl("Start")" title="@Labels.Start">
+            <span class="fa fa-home" aria-hidden="true"></span>
+            <span class="sr-only">@Labels.Start</span>
+        </a>
     </li>
 }

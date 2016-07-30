@@ -9,7 +9,11 @@
 @using (Html.BeginRouteForm("SignInPost", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <fieldset>
-        <legend><span class="fa fa-user ico-padding text-default"></span>@Labels.SignIn</legend>
+        <legend>
+            <span class="fa fa-user ico-padding text-default" aria-hidden="true"></span>
+            @Labels.SignIn
+        </legend>
+
         @Html.HiddenFor(u => u.ReturnUrl)
         <div class="form-group">
             @Html.LabelFor(u => u.Login, new { @class = "col-lg-1 control-label" })
@@ -31,8 +35,16 @@
                 <p>
                     @Html.ValidationMessage("invalid_login", new { @class = "label label-warning" })
                 </p>
-                <button type="submit" class="btn btn-default"><span class="fa fa-sign-in ico-padding"></span>@Labels.SignIn</button>
+                <button type="submit" class="btn btn-default">
+                    <span class="fa fa-sign-in ico-padding" aria-hidden="true"></span>
+                    @Labels.SignIn
+                </button>
             </div>
         </div>
     </fieldset>
+}
+
+@section Scripts{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 }
