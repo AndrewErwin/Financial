@@ -18,7 +18,7 @@ namespace Financial.Migrations
 
             modelBuilder.Entity("Financial.Models.Entities.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Login")

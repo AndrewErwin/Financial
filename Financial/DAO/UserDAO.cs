@@ -18,8 +18,8 @@ namespace Financial.DAO
 
         public override void Add(User entity)
         {
-            this.Context.Users.Add(entity);
-            this.Context.SaveChanges();
+            // USE WebSecurity.CreateUserAndAccount()
+            throw new NotImplementedException();
         }
 
         public override void Update(User entity)

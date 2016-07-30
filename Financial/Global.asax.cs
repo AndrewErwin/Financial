@@ -14,8 +14,8 @@ namespace Financial
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            
-//            WebSecurity.InitializeDatabaseConnection("Financial", "Users", "Id", "Login", true);
+
+            WebSecurity.InitializeDatabaseConnection("Financial", "Users", "Id", "Login", true);
         }
     }
 }

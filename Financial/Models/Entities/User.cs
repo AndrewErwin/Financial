@@ -7,8 +7,9 @@ namespace Financial.Models.Entities
     [Table("Users")]
     public class User
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
 
         [Required]
         [StringLength(100, MinimumLength = 5)]
