@@ -18,7 +18,8 @@ namespace Financial.DAO
 
         public override void Add(User entity)
         {
-            throw new NotImplementedException();
+            this.Context.Users.Add(entity);
+            this.Context.SaveChanges();
         }
 
         public override void Update(User entity)
