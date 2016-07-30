@@ -1,3 +1,10 @@
 ﻿<li>
-    <a href="@Url.RouteUrl("SignUp")"><span class="fa fa-users ico-padding"></span>Cadastre-se</a>
+    @if (WebSecurity.IsAuthenticated)
+    {
+        <a href="#"><span class="fa fa-user ico-padding"></span>@(WebSecurity.CurrentUserName)</a>
+    }
+    else
+    {
+        <a href="@Url.RouteUrl("SignUp")"><span class="fa fa-users ico-padding"></span>Cadastre-se</a>
+    }
 </li>

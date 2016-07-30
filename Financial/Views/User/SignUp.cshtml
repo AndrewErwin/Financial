@@ -1,9 +1,56 @@
-﻿@model Financial.Models.Entities.User
+﻿@model Financial.Models.UserSignUpModel
 
 @{
     ViewBag.Title = "Cadastre-se";
 }
-<div class="text-center">
-    <h2 class="text-warning">Funcionalidade inoperante :/</h2>
-    <h4><em>por enquanto (:</em></h4>
-</div>
+
+@using (Html.BeginRouteForm("SignUpPost", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        <legend><span class="fa fa-users ico-padding text-success"></span> Cadastre-se no Financial</legend>
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(u => u.Name, "Nome", new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-6">
+                @Html.TextBoxFor(u => u.Name, new { @class = "form-control", placeholder = "Nome", autofocus = "" })
+                @Html.ValidationMessageFor(u => u.Name)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(u => u.Login, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-6">
+                @Html.TextBoxFor(u => u.Login, new { @class = "form-control", placeholder = "Nome de Usuário" })
+                @Html.ValidationMessageFor(u => u.Login)
+                @Html.ValidationMessage("create_user_error")
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(u => u.Password, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-2">
+                @Html.PasswordFor(u => u.Password, new { @class = "form-control", placeholder = "Senha" })
+                @Html.ValidationMessageFor(u => u.Password)
+            </div>
+            @Html.LabelFor(u => u.ConfirmPassword, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-2">
+                @Html.PasswordFor(u => u.ConfirmPassword, new { @class = "form-control", placeholder = "Senha" })
+                @Html.ValidationMessageFor(u => u.ConfirmPassword)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-success"><span class="fa fa-user-plus ico-padding"></span> Cadastrar</button>
+            </div>
+        </div>
+
+    </fieldset>
+}
+
+@section Scripts{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

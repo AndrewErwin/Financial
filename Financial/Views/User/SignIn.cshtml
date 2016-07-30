@@ -1,0 +1,36 @@
+﻿@model Financial.Models.UserLoginModel
+
+@{
+    ViewBag.Title = "SignIn";
+}
+
+@using (Html.BeginRouteForm("SignInPost", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        <legend><span class="fa fa-user ico-padding text-primary"></span>Efetuar Login</legend>
+        @Html.HiddenFor(u => u.ReturnUrl)
+        <div class="form-group">
+            @Html.LabelFor(u => u.Login, new { @class = "col-lg-1 control-label" })
+            <div class="col-lg-3">
+                @Html.TextBoxFor(u => u.Login, new { @class = "form-control", placeholder = "Nome de Usuário", autofocus = "" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.Password, new { @class = "col-lg-1 control-label" })
+            <div class="col-lg-3">
+                @Html.PasswordFor(u => u.Password, new { @class = "form-control", placeholder = "Senha" })
+            </div>
+        </div>
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-1">
+                <p>
+                    @Html.ValidationMessage("invalid_login", new { @class = "label label-warning" })
+                </p>
+                <button type="submit" class="btn btn-primary"><span class="fa fa-sign-in ico-padding"></span>Entrar</button>
+            </div>
+        </div>
+    </fieldset>
+}
