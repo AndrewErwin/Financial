@@ -1,9 +1,6 @@
-﻿using Financial.Internationalization;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+using Financial.Internationalization;
 
 namespace Financial.Models
 {

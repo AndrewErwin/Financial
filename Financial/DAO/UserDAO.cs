@@ -1,9 +1,8 @@
-﻿using Financial.Models.Context;
-using Financial.Models.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using Financial.Models.Context;
+using Financial.Models.Entities;
 
 namespace Financial.DAO
 {
@@ -35,6 +34,11 @@ namespace Financial.DAO
         public override User GetById(int entityId)
         {
             throw new NotImplementedException();
+        }
+
+        public User GetByLogin(String username)
+        {
+            return this.Context.Users.FirstOrDefault(u => u.Login == username);            
         }
     }
 }

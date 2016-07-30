@@ -1,5 +1,5 @@
-﻿using Financial.Models.Context;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Financial.Models.Context;
 
 namespace Financial.DAO
 {

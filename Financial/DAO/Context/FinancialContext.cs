@@ -1,10 +1,6 @@
-﻿using Financial.Models.Entities;
+﻿using System.Configuration;
+using Financial.Models.Entities;
 using Microsoft.Data.Entity;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
 
 namespace Financial.Models.Context
 {
