@@ -1,13 +1,27 @@
-﻿
+﻿@using Financial.Internationalization
+
 @{
-    ViewBag.Title = "Início";
+    ViewBag.Title = Labels.Home;
 }
 
 <div class="jumbotron">
     <h1>Financial</h1>
+
     <blockquote>
-        <p>&quot;É o melhor aplicativo para gerenciamento da contabilidade do dia-a-dia.&quot;</p>
-        <small><em>Você, pensando.</em></small>
+        <p>&quot;@Labels.Slogan&quot;</p>
+        <small><em>@Labels.Slogan_Quote</em></small>
     </blockquote>
-    <a href="#" class="btn btn-success"><span class="fa fa-users ico-padding"></span>Cadastre-se</a>
+
+    @if (WebSecurity.IsAuthenticated)
+    {
+        <a href="@Url.RouteUrl("Start")" class="btn btn-default"><span class="fa fa-home ico-padding"></span>@Labels.Start</a>
+    }
+    else
+    {
+        <a href="@Url.RouteUrl("SignUp")" class="btn btn-success"><span class="fa fa-users ico-padding"></span>@Labels.SignUp</a>
+        @:&nbsp;
+        @Labels.Or
+        @:&nbsp;
+        <a href="@Url.RouteUrl("SignIn")" class="btn btn-primary"><span class="fa fa-sign-in ico-padding"></span>@Labels.SignIn</a>
+    }
 </div>

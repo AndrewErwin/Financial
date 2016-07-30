@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>Or</value>
+  </data>
   <data name="SignIn" xml:space="preserve">
     <value>Sign in</value>
   </data>
@@ -128,5 +134,17 @@
   </data>
   <data name="SignUpFormMessage" xml:space="preserve">
     <value>Sign up in</value>
+  </data>
+  <data name="Slogan" xml:space="preserve">
+    <value>It is the best application for management of the accounting day-to-day.</value>
+  </data>
+  <data name="Slogan_Quote" xml:space="preserve">
+    <value>You, while thinking.</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="StartMessage" xml:space="preserve">
+    <value>Welcome, let's start...</value>
   </data>
 </root>
