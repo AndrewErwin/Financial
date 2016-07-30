@@ -1,24 +1,26 @@
 ﻿@model Financial.Models.UserLoginModel
 
+@using Financial.Internationalization
+
 @{
-    ViewBag.Title = "SignIn";
+    ViewBag.Title = Labels.SignIn;
 }
 
 @using (Html.BeginRouteForm("SignInPost", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <fieldset>
-        <legend><span class="fa fa-user ico-padding text-primary"></span>Efetuar Login</legend>
+        <legend><span class="fa fa-user ico-padding text-default"></span>@Labels.SignIn</legend>
         @Html.HiddenFor(u => u.ReturnUrl)
         <div class="form-group">
             @Html.LabelFor(u => u.Login, new { @class = "col-lg-1 control-label" })
             <div class="col-lg-3">
-                @Html.TextBoxFor(u => u.Login, new { @class = "form-control", placeholder = "Nome de Usuário", autofocus = "" })
+                @Html.TextBoxFor(u => u.Login, new { @class = "form-control", placeholder = UserEntityLabels.Login_Placeholder, autofocus = "" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(u => u.Password, new { @class = "col-lg-1 control-label" })
             <div class="col-lg-3">
-                @Html.PasswordFor(u => u.Password, new { @class = "form-control", placeholder = "Senha" })
+                @Html.PasswordFor(u => u.Password, new { @class = "form-control", placeholder = UserEntityLabels.Password_Placeholder })
             </div>
         </div>
 
@@ -29,7 +31,7 @@
                 <p>
                     @Html.ValidationMessage("invalid_login", new { @class = "label label-warning" })
                 </p>
-                <button type="submit" class="btn btn-primary"><span class="fa fa-sign-in ico-padding"></span>Entrar</button>
+                <button type="submit" class="btn btn-default"><span class="fa fa-sign-in ico-padding"></span>@Labels.SignIn</button>
             </div>
         </div>
     </fieldset>

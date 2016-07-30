@@ -1,10 +1,12 @@
-﻿<li>
+﻿@using Financial.Internationalization
+
+<li>
     @if (WebSecurity.IsAuthenticated)
     {
         <a href="#"><span class="fa fa-user ico-padding"></span>@(WebSecurity.CurrentUserName)</a>
     }
     else
     {
-        <a href="@Url.RouteUrl("SignUp")"><span class="fa fa-users ico-padding"></span>Cadastre-se</a>
+        <a href="@Url.RouteUrl("SignUp")"><span class="fa fa-users ico-padding"></span>@Labels.SignUp</a>
     }
 </li>

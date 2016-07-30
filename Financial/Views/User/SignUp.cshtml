@@ -1,49 +1,51 @@
 ﻿@model Financial.Models.UserSignUpModel
 
+@using Financial.Internationalization
+
 @{
-    ViewBag.Title = "Cadastre-se";
+    ViewBag.Title = Labels.SignUp;
 }
 
 @using (Html.BeginRouteForm("SignUpPost", FormMethod.Post, new { @class = "form-horizontal" }))
 {
     <fieldset>
-        <legend><span class="fa fa-users ico-padding text-success"></span> Cadastre-se no Financial</legend>
+        <legend><span class="fa fa-users ico-padding text-success"></span> @Labels.SignUpFormMessage Financial</legend>
 
         @Html.AntiForgeryToken()
 
         <div class="form-group">
-            @Html.LabelFor(u => u.Name, "Nome", new { @class = "col-lg-2 control-label" })
-            <div class="col-lg-6">
-                @Html.TextBoxFor(u => u.Name, new { @class = "form-control", placeholder = "Nome", autofocus = "" })
+            @Html.LabelFor(u => u.Name, new { @class = "col-lg-1 control-label" })
+            <div class="col-lg-8">
+                @Html.TextBoxFor(u => u.Name, new { @class = "form-control", placeholder = UserEntityLabels.Name_Placeholder, autofocus = "" })
                 @Html.ValidationMessageFor(u => u.Name)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(u => u.Login, new { @class = "col-lg-2 control-label" })
-            <div class="col-lg-6">
-                @Html.TextBoxFor(u => u.Login, new { @class = "form-control", placeholder = "Nome de Usuário" })
+            @Html.LabelFor(u => u.Login, new { @class = "col-lg-1 control-label" })
+            <div class="col-lg-3">
+                @Html.TextBoxFor(u => u.Login, new { @class = "form-control", placeholder = UserEntityLabels.Login_Placeholder })
                 @Html.ValidationMessageFor(u => u.Login)
                 @Html.ValidationMessage("create_user_error")
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(u => u.Password, new { @class = "col-lg-2 control-label" })
-            <div class="col-lg-2">
-                @Html.PasswordFor(u => u.Password, new { @class = "form-control", placeholder = "Senha" })
+            @Html.LabelFor(u => u.Password, new { @class = "col-lg-1 control-label" })
+            <div class="col- col-lg-3">
+                @Html.PasswordFor(u => u.Password, new { @class = "form-control", placeholder = UserEntityLabels.Password_Placeholder })
                 @Html.ValidationMessageFor(u => u.Password)
             </div>
             @Html.LabelFor(u => u.ConfirmPassword, new { @class = "col-lg-2 control-label" })
-            <div class="col-lg-2">
-                @Html.PasswordFor(u => u.ConfirmPassword, new { @class = "form-control", placeholder = "Senha" })
+            <div class="col-lg-3">
+                @Html.PasswordFor(u => u.ConfirmPassword, new { @class = "form-control", placeholder = UserEntityLabels.PasswordConfirm_Placeholder })
                 @Html.ValidationMessageFor(u => u.ConfirmPassword)
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <button type="submit" class="btn btn-success"><span class="fa fa-user-plus ico-padding"></span> Cadastrar</button>
+            <div class="col-lg-10 col-lg-offset-1">
+                <button type="submit" class="btn btn-success"><span class="fa fa-user-plus ico-padding"></span> @Labels.SignUp</button>
             </div>
         </div>
 

@@ -15,7 +15,7 @@ namespace Financial.Controllers
         }
 
         [HttpGet]
-        [Route("Inicio", Name = "Start")]
+        [Route("Start", Name = "Start")]
         public ActionResult Start()
         {
             return View();
