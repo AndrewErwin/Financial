@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Financial.Internationalization {
+namespace Financial.Internationalization.Entities.CreditCardNetwork {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Financial.Internationalization {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Labels {
+    public class CCNetworkEntityLabels {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Labels() {
+        internal CCNetworkEntityLabels() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Financial.Internationalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Financial.Internationalization.Labels", typeof(Labels).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Financial.Internationalization.Entities.CreditCardNetwork.CCNetworkEntityLabels", typeof(CCNetworkEntityLabels).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,146 +61,128 @@ namespace Financial.Internationalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Actions.
+        ///   Looks up a localized string similar to Name.
         /// </summary>
-        public static string Actions {
+        public static string DisplayName {
             get {
-                return ResourceManager.GetString("Actions", resourceCulture);
+                return ResourceManager.GetString("DisplayName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
+        ///   Looks up a localized string similar to Network&apos;s Name.
         /// </summary>
-        public static string Delete {
+        public static string DisplayName_Placeholder {
             get {
-                return ResourceManager.GetString("Delete", resourceCulture);
+                return ResourceManager.GetString("DisplayName_Placeholder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Edit.
+        ///   Looks up a localized string similar to Image.
         /// </summary>
-        public static string Edit {
+        public static string ImageName {
             get {
-                return ResourceManager.GetString("Edit", resourceCulture);
+                return ResourceManager.GetString("ImageName", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home.
+        ///   Looks up a localized string similar to Image File Name.
         /// </summary>
-        public static string Home {
+        public static string ImageName_Placeholder {
             get {
-                return ResourceManager.GetString("Home", resourceCulture);
+                return ResourceManager.GetString("ImageName_Placeholder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New.
+        ///   Looks up a localized string similar to Preview.
         /// </summary>
-        public static string New {
+        public static string ImagePreview {
             get {
-                return ResourceManager.GetString("New", resourceCulture);
+                return ResourceManager.GetString("ImagePreview", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Or.
+        ///   Looks up a localized string similar to Network &apos;%n&apos; was updated..
         /// </summary>
-        public static string Or {
+        public static string Message_Modified {
             get {
-                return ResourceManager.GetString("Or", resourceCulture);
+                return ResourceManager.GetString("Message_Modified", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Register.
+        ///   Looks up a localized string similar to Network &apos;%n&apos; was added..
         /// </summary>
-        public static string Register {
+        public static string Message_New {
             get {
-                return ResourceManager.GetString("Register", resourceCulture);
+                return ResourceManager.GetString("Message_New", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save Changes.
+        ///   Looks up a localized string similar to There&apos;s no registered Network yet.
         /// </summary>
-        public static string SaveChanges {
+        public static string NoRegisteredYet {
             get {
-                return ResourceManager.GetString("SaveChanges", resourceCulture);
+                return ResourceManager.GetString("NoRegisteredYet", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign in.
+        ///   Looks up a localized string similar to Network with id &apos;%i&apos; don&apos;t exists..
         /// </summary>
-        public static string SignIn {
+        public static string NotFoundById {
             get {
-                return ResourceManager.GetString("SignIn", resourceCulture);
+                return ResourceManager.GetString("NotFoundById", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign out.
+        ///   Looks up a localized string similar to Credit Card Network.
         /// </summary>
-        public static string SignOut {
+        public static string This {
             get {
-                return ResourceManager.GetString("SignOut", resourceCulture);
+                return ResourceManager.GetString("This", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign up.
+        ///   Looks up a localized string similar to Modify this Credit Card Network.
         /// </summary>
-        public static string SignUp {
+        public static string This_Edit_Title {
             get {
-                return ResourceManager.GetString("SignUp", resourceCulture);
+                return ResourceManager.GetString("This_Edit_Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sign up in Financial.
+        ///   Looks up a localized string similar to List of available Credit Card Networks.
         /// </summary>
-        public static string SignUpFormMessage {
+        public static string This_List_Title {
             get {
-                return ResourceManager.GetString("SignUpFormMessage", resourceCulture);
+                return ResourceManager.GetString("This_List_Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to It is the best application for management of the accounting day-to-day..
+        ///   Looks up a localized string similar to Register new Credit Card Network.
         /// </summary>
-        public static string Slogan {
+        public static string This_New_Title {
             get {
-                return ResourceManager.GetString("Slogan", resourceCulture);
+                return ResourceManager.GetString("This_New_Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You, while thinking..
+        ///   Looks up a localized string similar to Credit Card Networks.
         /// </summary>
-        public static string Slogan_Quote {
+        public static string This_Plural {
             get {
-                return ResourceManager.GetString("Slogan_Quote", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Start.
-        /// </summary>
-        public static string Start {
-            get {
-                return ResourceManager.GetString("Start", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Welcome, let&apos;s start....
-        /// </summary>
-        public static string StartMessage {
-            get {
-                return ResourceManager.GetString("StartMessage", resourceCulture);
+                return ResourceManager.GetString("This_Plural", resourceCulture);
             }
         }
     }

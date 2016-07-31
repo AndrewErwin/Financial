@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Financial.Internationalization;
+using Financial.Internationalization.Entities.User;
 
 namespace Financial.Models
 {

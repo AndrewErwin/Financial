@@ -129,6 +129,9 @@
   <data name="Name_Placeholder" xml:space="preserve">
     <value>Your Name</value>
   </data>
+  <data name="NoRegisteredYet" xml:space="preserve">
+    <value>There's no registered User yet</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
@@ -140,5 +143,14 @@
   </data>
   <data name="Password_Placeholder" xml:space="preserve">
     <value>At least 6 characters</value>
+  </data>
+  <data name="This" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="This_List_title" xml:space="preserve">
+    <value>List of Users</value>
+  </data>
+  <data name="This_Plural" xml:space="preserve">
+    <value>Users</value>
   </data>
 </root>

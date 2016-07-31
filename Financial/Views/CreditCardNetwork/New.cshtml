@@ -1,0 +1,40 @@
+﻿@model Financial.Models.Entities.CreditCardNetwork
+
+@using Financial.Internationalization
+@using Financial.Internationalization.Entities.CreditCardNetwork
+
+@{
+    ViewBag.Title = @CCNetworkEntityLabels.This_New_Title;
+}
+
+@using (Html.BeginRouteForm("NewCreditCardNetworkPost", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.AntiForgeryToken()
+        <legend><span class="fa fa-credit-card-alt text-success ico-padding"></span>@CCNetworkEntityLabels.This_New_Title</legend>
+        <div class="form-group">
+
+            @Html.LabelFor(n => n.DisplayName, new { @class = "col-lg-1 control-label" })
+            <div class="col-lg-5">
+                @Html.TextBoxFor(n => n.DisplayName, new { @class = "form-control", placeholder = @CCNetworkEntityLabels.DisplayName_Placeholder, autofocus = "" })
+                @Html.ValidationMessageFor(n => n.DisplayName)
+            </div>
+
+            @Html.LabelFor(n => n.ImageName, new { @class = "col-lg-1 control-label" })
+            <div class="col-lg-5">
+                @Html.DropDownListFor(n => n.ImageName, new SelectList(ViewBag.ImageList), new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-11 col-lg-offset-1">
+                <button type="submit" class="btn btn-primary btn-success"><span class="fa fa-plus ico-padding" aria-hidden="true"></span>@Labels.Register</button>
+            </div>
+        </div>
+    </fieldset>
+}
+
+@section Scripts{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

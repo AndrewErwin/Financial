@@ -197,6 +197,8 @@
     <Content Include="Content\favicon.ico" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\ccnetworks\mastercard.png" />
+    <Content Include="Content\images\ccnetworks\visa.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -208,20 +210,27 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CreditCardNetworkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DAO\CreditCardNetworkDAO.cs" />
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Internationalization\Entities\CreditCardNetwork\CCNetworkEntityLabels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CCNetworkEntityLabels.resx</DependentUpon>
     </Compile>
     <Compile Include="Internationalization\Labels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Labels.resx</DependentUpon>
     </Compile>
-    <Compile Include="Internationalization\UserEntityLabels.Designer.cs">
+    <Compile Include="Internationalization\Entities\User\UserEntityLabels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserEntityLabels.resx</DependentUpon>
@@ -230,8 +239,13 @@
     <Compile Include="Migrations\20160730030354_CreateUserEntity.designer.cs">
       <DependentUpon>20160730030354_CreateUserEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20160731172141_CreateCreditCardNetwork.cs" />
+    <Compile Include="Migrations\20160731172141_CreateCreditCardNetwork.designer.cs">
+      <DependentUpon>20160731172141_CreateCreditCardNetwork.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\FinancialContextModelSnapshot.cs" />
     <Compile Include="DAO\Context\FinancialContext.cs" />
+    <Compile Include="Models\Entities\CreditCardNetwork.cs" />
     <Compile Include="Models\Entities\User.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Models\UserSignUpModel.cs" />
@@ -262,6 +276,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Views\Home\Start.cshtml" />
     <Content Include="Views\User\SignIn.cshtml" />
+    <Content Include="Views\CreditCardNetwork\List.cshtml" />
+    <Content Include="Views\CreditCardNetwork\New.cshtml" />
+    <Content Include="Views\CreditCardNetwork\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -270,15 +287,20 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Internationalization\Entities\CreditCardNetwork\CCNetworkEntityLabels.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CCNetworkEntityLabels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Internationalization\Labels.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Labels.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Internationalization\UserEntityLabels.resx">
+    <EmbeddedResource Include="Internationalization\Entities\User\UserEntityLabels.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>UserEntityLabels.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

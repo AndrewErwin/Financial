@@ -4,15 +4,13 @@
     @if (WebSecurity.IsAuthenticated)
     {
         <a href="#">
-            <span class="fa fa-user ico-padding" aria-hidden="true"></span>
-            @(WebSecurity.CurrentUserName)
+            <span class="fa fa-user ico-padding" aria-hidden="true"></span>@(WebSecurity.CurrentUserName)
         </a>
     }
     else
     {
         <a href="@Url.RouteUrl("SignUp")" title="@Labels.SignUp">
-            <span class="fa fa-users ico-padding" aria-hidden="true"></span>
-            @Labels.SignUp
+            <span class="fa fa-users ico-padding" aria-hidden="true"></span>@Labels.SignUp
         </a>
     }
 </li>

@@ -31,7 +31,7 @@ namespace Financial.DAO
             throw new NotImplementedException();
         }
 
-        public override User GetById(int entityId)
+        public override User GetById(Guid entityId)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Financial.Models.Context;
 
 namespace Financial.DAO
@@ -16,6 +17,6 @@ namespace Financial.DAO
         public abstract void Add(T entity);
         public abstract void Update(T entity);
         public abstract void Delete(T entity);
-        public abstract T GetById(int entityId);
+        public abstract T GetById(Guid entityId);
     }
 }

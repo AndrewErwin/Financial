@@ -1,9 +1,19 @@
 ﻿main {
     margin-top: 70px;
 }
-.linha-footer {
+.footer-hr {
     margin-bottom: 5px;
 }
 .ico-padding{
-    padding-right: 8px;
+    padding-right: .3em;
+}
+.section-header-btns {
+    margin-bottom: 1em;
+}
+.text-middle {
+    vertical-align: middle !important;
+}
+.alert-header-section {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }

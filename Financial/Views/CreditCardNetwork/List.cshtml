@@ -1,0 +1,99 @@
+﻿@model List<Financial.Models.Entities.CreditCardNetwork>
+
+@using Financial.Internationalization
+@using Financial.Internationalization.Entities.CreditCardNetwork
+
+@{
+    ViewBag.Title = CCNetworkEntityLabels.This_Plural;
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>
+            <span class="fa fa-credit-card-alt fa-lg ico-padding" aria-hidden="true"></span>@CCNetworkEntityLabels.This_List_Title
+        </h4>
+    </div>
+    <div class="panel-body">
+
+        <section class="row section-header-btns">
+            <div class="col-lg-1">
+                <a href="@Url.RouteUrl("NewCreditCardNetwork")" class="btn btn-success btn-sm" title="@Labels.New @CCNetworkEntityLabels.This">
+                    <span class="fa fa-plus ico-padding" aria-hidden="true"></span>@Labels.New
+                </a>
+            </div>
+            <div class="col-lg-11">
+                @if (TempData["newNetwork"] != null)
+                {
+                    Financial.Models.Entities.CreditCardNetwork new_network = ((Financial.Models.Entities.CreditCardNetwork)TempData["newNetwork"]);
+
+                    <div class="alert alert-dismissible alert-info alert-header-section">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <span class="fa fa-check ico-padding" aria-hidden="true"></span>                        
+                        <a href="#@(new_network.Id)" class="alert-link">@CCNetworkEntityLabels.Message_New.Replace("%n", new_network.DisplayName)</a>
+                    </div>
+                }
+                else if (TempData["modifiedNetwork"] != null)
+                {
+                    Financial.Models.Entities.CreditCardNetwork new_network = ((Financial.Models.Entities.CreditCardNetwork)TempData["modifiedNetwork"]);
+                    
+                    <div class="alert alert-dismissible alert-info alert-header-section">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <span class="fa fa-floppy-o ico-padding" aria-hidden="true"></span>
+                        <a href="#@(new_network.Id)" class="alert-link">@CCNetworkEntityLabels.Message_Modified.Replace("%n", new_network.DisplayName)</a>
+                    </div>
+                }
+                else if (TempData["network_not_found"] != null)
+                {
+                    Financial.Models.Entities.CreditCardNetwork new_network = ((Financial.Models.Entities.CreditCardNetwork)TempData["modifiedNetwork"]);                    
+                    
+                    <div class="alert alert-dismissible alert-warning alert-header-section">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <span class="fa fa-exclamation-triangle ico-padding" aria-hidden="true"></span>
+                        @CCNetworkEntityLabels.NotFoundById.Replace("%i", TempData["network_not_found"].ToString())
+                    </div>
+                }
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-12">
+                <table class="table table-responsive table-condensed @(Model.Any() ? "table-hover" : "")">
+                    <thead>
+                        <tr>
+                            <th>@CCNetworkEntityLabels.DisplayName</th>
+                            <th class="text-middle">@CCNetworkEntityLabels.ImageName</th>
+                            <th class="col-lg-1 text-center">@CCNetworkEntityLabels.ImagePreview</th>
+                            <th class="col-lg-1 text-center">@Labels.Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Any())
+                        {
+                            foreach (var network in @Model)
+                            {
+                                <tr id="@network.Id">
+                                    <td class="text-middle">@network.DisplayName</td>
+                                    <td class="text-middle">@network.ImageName</td>
+                                    <td class="text-center text-middle"><img src="~/Content/images/ccnetworks/@network.ImageName" title="@network.DisplayName" /></td>
+                                    <td class="text-center text-middle">
+                                        <a href="@Url.RouteUrl("EditCreditCardNetwork", new { id = network.Id })" class="btn btn-primary btn-sm" title="@Labels.Edit">
+                                            <span class="fa fa-pencil" aria-hidden="true"></span>
+                                            <span class="sr-only">@Labels.Edit</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4" class="text-center"><em>@CCNetworkEntityLabels.NoRegisteredYet</em></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>

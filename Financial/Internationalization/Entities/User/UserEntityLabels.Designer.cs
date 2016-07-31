@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Financial.Internationalization {
+namespace Financial.Internationalization.Entities.User {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Financial.Internationalization {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Financial.Internationalization.UserEntityLabels", typeof(UserEntityLabels).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Financial.Internationalization.Entities.User.UserEntityLabels", typeof(UserEntityLabels).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -97,6 +97,15 @@ namespace Financial.Internationalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to There&apos;s no registered User yet.
+        /// </summary>
+        public static string NoRegisteredYet {
+            get {
+                return ResourceManager.GetString("NoRegisteredYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -129,6 +138,33 @@ namespace Financial.Internationalization {
         public static string PasswordConfirm_Placeholder {
             get {
                 return ResourceManager.GetString("PasswordConfirm_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string This {
+            get {
+                return ResourceManager.GetString("This", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List of Users.
+        /// </summary>
+        public static string This_List_title {
+            get {
+                return ResourceManager.GetString("This_List_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string This_Plural {
+            get {
+                return ResourceManager.GetString("This_Plural", resourceCulture);
             }
         }
     }
