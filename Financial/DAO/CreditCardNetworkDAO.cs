@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Linq.Expressions;
 using Financial.Models.Context;
 using Financial.Models.Entities;
+using Microsoft.Data.Entity;
 
 namespace Financial.DAO
 {
@@ -11,9 +12,13 @@ namespace Financial.DAO
     {
         public CreditCardNetworkDAO(FinancialContext context) : base(context) { }
 
-        public override List<CreditCardNetwork> List()
+        public override List<CreditCardNetwork> List(params Expression<Func<CreditCardNetwork, object>>[] includes)
         {
-            return this.Context.CreditCardNetworks.OrderBy(n => n.DisplayName).ToList();
+            var networks = this.Context.CreditCardNetworks;
+            return includes.Aggregate(
+                        networks.AsQueryable(),
+                        (query, include) => query.Include(include)                    
+                    ).OrderBy(n => n.DisplayName).ToList();
         }
 
         public override void Add(CreditCardNetwork entity)
@@ -32,11 +37,15 @@ namespace Financial.DAO
         {
             this.Context.CreditCardNetworks.Remove(entity);
             this.Context.SaveChanges();
-        }
+        }        
 
-        public override CreditCardNetwork GetById(Guid entityId)
+        public override CreditCardNetwork GetById(Guid entityId, params Expression<Func<CreditCardNetwork, object>>[] includes)
         {
-            return this.Context.CreditCardNetworks.FirstOrDefault(n => n.Id == entityId);
+            var ccNetwork = this.Context.CreditCardNetworks;
+            return includes.Aggregate(
+                        ccNetwork.AsQueryable(),
+                        (query, include) => query.Include(include)
+                    ).Where(c => c.Id == entityId).FirstOrDefault();
         }
     }
 }

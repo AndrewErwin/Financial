@@ -210,10 +210,12 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CreditCardController.cs" />
     <Compile Include="Controllers\CreditCardNetworkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="DAO\CreditCardDAO.cs" />
     <Compile Include="DAO\CreditCardNetworkDAO.cs" />
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
