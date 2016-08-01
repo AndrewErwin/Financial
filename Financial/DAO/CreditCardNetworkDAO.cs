@@ -7,7 +7,7 @@ using Financial.Models.Entities;
 
 namespace Financial.DAO
 {
-    public class CreditCardNetworkDAO : DAO<CreditCardNetwork>
+    public class CreditCardNetworkDAO : DAO<CreditCardNetwork, Guid>
     {
         public CreditCardNetworkDAO(FinancialContext context) : base(context) { }
 

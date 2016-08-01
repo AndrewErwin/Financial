@@ -6,7 +6,7 @@ using Financial.Models.Entities;
 
 namespace Financial.DAO
 {
-    public class UserDAO : DAO<User>
+    public class UserDAO : DAO<User, int>
     {
         public UserDAO(FinancialContext context) : base(context) { }
 
@@ -31,14 +31,14 @@ namespace Financial.DAO
             throw new NotImplementedException();
         }
 
-        public override User GetById(Guid entityId)
+        public override User GetById(int entityId)
         {
             throw new NotImplementedException();
         }
 
         public User GetByLogin(String username)
         {
-            return this.Context.Users.FirstOrDefault(u => u.Login == username);            
+            return this.Context.Users.FirstOrDefault(u => u.Login == username);
         }
     }
 }

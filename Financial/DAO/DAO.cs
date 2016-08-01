@@ -4,7 +4,7 @@ using Financial.Models.Context;
 
 namespace Financial.DAO
 {
-    public abstract class DAO<T>
+    public abstract class DAO<T, I>
     {
         protected FinancialContext Context { get; private set; }
 
@@ -17,6 +17,6 @@ namespace Financial.DAO
         public abstract void Add(T entity);
         public abstract void Update(T entity);
         public abstract void Delete(T entity);
-        public abstract T GetById(Guid entityId);
+        public abstract T GetById(I entityId);
     }
 }
