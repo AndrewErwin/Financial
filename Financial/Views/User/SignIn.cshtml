@@ -20,12 +20,14 @@
             @Html.LabelFor(u => u.Login, new { @class = "col-lg-1 control-label" })
             <div class="col-lg-3">
                 @Html.TextBoxFor(u => u.Login, new { @class = "form-control", placeholder = UserEntityLabels.Login_Placeholder, autofocus = "" })
+                @Html.ValidationMessageFor(u => u.Login)
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(u => u.Password, new { @class = "col-lg-1 control-label" })
             <div class="col-lg-3">
                 @Html.PasswordFor(u => u.Password, new { @class = "form-control", placeholder = UserEntityLabels.Password_Placeholder })
+                @Html.ValidationMessageFor(u => u.Password)
             </div>
         </div>
 
@@ -46,6 +48,5 @@
 }
 
 @section Scripts{
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    @Html.Partial("_ValidateScripts")
 }
