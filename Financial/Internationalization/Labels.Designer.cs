@@ -106,6 +106,15 @@ namespace Financial.Internationalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Or.
         /// </summary>
         public static string Or {
@@ -201,6 +210,15 @@ namespace Financial.Internationalization {
         public static string StartMessage {
             get {
                 return ResourceManager.GetString("StartMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

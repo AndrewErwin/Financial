@@ -24,6 +24,7 @@ namespace Financial.DAO
 
         public override void Add(CreditCard entity)
         {
+            entity.OwnerId = WebSecurity.CurrentUserId;
             this.Context.Add(entity);
             this.Context.SaveChanges();
         }

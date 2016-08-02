@@ -120,6 +120,9 @@
   <data name="International" xml:space="preserve">
     <value>International</value>
   </data>
+  <data name="Message_New" xml:space="preserve">
+    <value>Credit Card '%c' was added.</value>
+  </data>
   <data name="Network" xml:space="preserve">
     <value>Network</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="Nickname_Placeholder" xml:space="preserve">
     <value>Nickname</value>
+  </data>
+  <data name="NoRegisteredYet" xml:space="preserve">
+    <value>There's no registered Credit Card yet</value>
   </data>
   <data name="This" xml:space="preserve">
     <value>Credit Card</value>

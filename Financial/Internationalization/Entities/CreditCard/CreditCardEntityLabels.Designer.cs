@@ -70,6 +70,15 @@ namespace Financial.Internationalization.Entities.CreditCard {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Credit Card &apos;%c&apos; was added..
+        /// </summary>
+        public static string Message_New {
+            get {
+                return ResourceManager.GetString("Message_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Network.
         /// </summary>
         public static string Network {
@@ -93,6 +102,15 @@ namespace Financial.Internationalization.Entities.CreditCard {
         public static string Nickname_Placeholder {
             get {
                 return ResourceManager.GetString("Nickname_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There&apos;s no registered Credit Card yet.
+        /// </summary>
+        public static string NoRegisteredYet {
+            get {
+                return ResourceManager.GetString("NoRegisteredYet", resourceCulture);
             }
         }
         

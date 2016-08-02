@@ -1,10 +1,19 @@
 ﻿@using Financial.Internationalization
+@using Financial.Internationalization.Entities.CreditCard
+
 @if (WebSecurity.IsAuthenticated)
 {
     <li>
         <a href="@Url.RouteUrl("Start")" title="@Labels.Start">
             <span class="fa fa-home" aria-hidden="true"></span>
             <span class="sr-only">@Labels.Start</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="@Url.RouteUrl("ListCreditCards")" title="@CreditCardEntityLabels.This_Plural">
+            <span class="fa fa-credit-card-alt ico-padding" aria-hidden="true"></span>@CreditCardEntityLabels.This_Plural
+            
         </a>
     </li>
 }

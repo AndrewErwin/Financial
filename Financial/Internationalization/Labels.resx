@@ -132,6 +132,9 @@
   <data name="New" xml:space="preserve">
     <value>New</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
   <data name="Or" xml:space="preserve">
     <value>Or</value>
   </data>
@@ -164,5 +167,8 @@
   </data>
   <data name="StartMessage" xml:space="preserve">
     <value>Welcome, let's start...</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>
