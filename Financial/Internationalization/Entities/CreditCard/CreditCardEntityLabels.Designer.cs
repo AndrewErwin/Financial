@@ -70,11 +70,47 @@ namespace Financial.Internationalization.Entities.CreditCard {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to Delete the &apos;%c&apos; card?.
+        /// </summary>
+        public static string Message_ConfirmDelete {
+            get {
+                return ResourceManager.GetString("Message_ConfirmDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credit Card &apos;%c&apos; was deleted..
+        /// </summary>
+        public static string Message_Deleted {
+            get {
+                return ResourceManager.GetString("Message_Deleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credit Card &apos;%c&apos; was updated..
+        /// </summary>
+        public static string Message_Modified {
+            get {
+                return ResourceManager.GetString("Message_Modified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Credit Card &apos;%c&apos; was added..
         /// </summary>
         public static string Message_New {
             get {
                 return ResourceManager.GetString("Message_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Credit Card with id &apos;%i&apos; don&apos;t exists..
+        /// </summary>
+        public static string Message_NotFoundById {
+            get {
+                return ResourceManager.GetString("Message_NotFoundById", resourceCulture);
             }
         }
         
@@ -120,6 +156,15 @@ namespace Financial.Internationalization.Entities.CreditCard {
         public static string This {
             get {
                 return ResourceManager.GetString("This", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete this Credit Card.
+        /// </summary>
+        public static string This_Delete_Title {
+            get {
+                return ResourceManager.GetString("This_Delete_Title", resourceCulture);
             }
         }
         

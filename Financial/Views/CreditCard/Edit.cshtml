@@ -1,0 +1,49 @@
+﻿@model Financial.Models.CreditCardFormModel
+
+@using Financial.Internationalization
+@using Financial.Internationalization.Entities.CreditCard
+
+@{
+    ViewBag.Title = CreditCardEntityLabels.This_Edit_Title;
+}
+
+@using (Html.BeginRouteForm("EditCreditCardPost", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(c => c.Id)
+        <legend><span class="fa fa-credit-card-alt ico-padding text-primary"></span>@CreditCardEntityLabels.This_Edit_Title</legend>
+        <div class="form-group">
+            @Html.LabelFor(c => c.Nickname, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(c => c.Nickname, new { @class = "form-control", placeholder = @CreditCardEntityLabels.Nickname_Placeholder, autofocus = "" })
+                @Html.ValidationMessageFor(c => c.Nickname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(c => c.NetworkId, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.DropDownListFor(c => c.NetworkId, new SelectList(ViewBag.NetworkList, "Id", "DisplayName"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(c => c.NetworkId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(c => c.International, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-1">
+                @Html.CheckBoxFor(c => c.International, new { @class = "checkbox" })
+                @Html.ValidationMessageFor(c => c.International)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary">@Labels.SaveChanges</button>
+            </div>
+        </div>
+    </fieldset>
+}
+@section Scripts{
+    @Html.Partial("_ValidateScripts")
+}

@@ -1,0 +1,34 @@
+﻿@model Financial.Models.AnyGuidConfirmDelete
+
+@using Financial.Internationalization
+@using Financial.Internationalization.Entities.CreditCard
+
+@{
+    ViewBag.Title = Labels.Delete;
+}
+
+@using (Html.BeginRouteForm("DeleteCreditCardPost", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend><span class="fa fa-trash text-danger ico-padding" aria-hidden="true"></span>@CreditCardEntityLabels.This_Delete_Title</legend>
+        <div class="form-group">
+            <div class="text-center">
+                @Html.HiddenFor(c => c.Id)
+                @Html.HiddenFor(c => c.Name)
+                <h4>@CreditCardEntityLabels.Message_ConfirmDelete.Replace("%c",Model.Name)</h4>
+                <button type="submit" class="btn btn-danger"><span class="fa fa-check ico-padding" aria-hidden="true"></span>@Labels.Yes</button>
+                <a href="#" class="btn btn-default" id="cancel" ><span class="fa fa-times ico-padding" aria-hidden="true"></span>@Labels.No</a>
+            </div>
+        </div>
+</fieldset>
+}
+
+@section OnLoad{
+    <script>
+        $('#cancel').click(function (event) {
+            event.preventDefault();
+            history.back(1);
+        });
+    </script>
+}

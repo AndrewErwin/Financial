@@ -32,6 +32,32 @@
                         <a href="#@(newCreditCard.Id)" class="alert-link">@CreditCardEntityLabels.Message_New.Replace("%c", newCreditCard.Nickname)</a>
                     </div>
                 }
+                else if (TempData["modifiedCard"] != null)
+                {
+                    Financial.Models.Entities.CreditCard modifiedCard = ((Financial.Models.Entities.CreditCard)TempData["modifiedCard"]);
+
+                    <div class="alert alert-dismissible alert-info alert-header-section">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <span class="fa fa-floppy-o ico-padding" aria-hidden="true"></span>
+                        <a href="#@(modifiedCard.Id)" class="alert-link">@CreditCardEntityLabels.Message_Modified.Replace("%c", modifiedCard.Nickname)</a>
+                    </div>
+                }
+                else if (TempData["card_not_found"] != null)
+                {
+                    <div class="alert alert-dismissible alert-warning alert-header-section">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <span class="fa fa-exclamation-triangle ico-padding" aria-hidden="true"></span>
+                        @CreditCardEntityLabels.Message_NotFoundById.Replace("%i", TempData["card_not_found"].ToString())
+                    </div>
+                }
+                else if (TempData["card_deleted"] != null)
+                {
+                    <div class="alert alert-dismissible alert-info alert-header-section">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <span class="fa fa-trash-o ico-padding" aria-hidden="true"></span>
+                        @CreditCardEntityLabels.Message_Deleted.Replace("%c", TempData["card_deleted"].ToString())
+                    </div>
+                }
             </div>
         </section>
 
@@ -67,11 +93,11 @@
                                     </td>
                                     <td>
                                         <div class="text-center text-middle">
-                                            <a href="#" class="btn btn-primary btn-sm" title="@Labels.Edit">
+                                            <a href="@Url.RouteUrl("EditCreditCard", new { id = card.Id })" class="btn btn-primary btn-sm" title="@Labels.Edit">
                                                 <span class="fa fa-pencil" aria-hidden="true"></span>
                                                 <span class="sr-only">@Labels.Edit</span>
                                             </a>
-                                            <a href="#" class="btn btn-danger btn-sm" title="@Labels.Delete">
+                                            <a href="@Url.RouteUrl("DeleteCreditCard", new { id = card.Id })" class="btn btn-danger btn-sm" title="@Labels.Delete">
                                                 <span class="fa fa-trash" aria-hidden="true"></span>
                                                 <span class="sr-only">@Labels.Delete</span>
                                             </a>

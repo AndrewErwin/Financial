@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using AutoMapper;
 using Financial.DAO;
 using Financial.Models;
@@ -58,5 +59,72 @@ namespace Financial.Controllers
             return View(newCreditCard);
         }
 
+        [HttpGet]
+        [Route("Edit/CreditCard/{id}")]
+        [Route("CreditCard/Edit/{id}", Name = "EditCreditCard")]
+        public ActionResult Edit(String id)
+        {
+            Guid cardId = Guid.Empty;
+            if (Guid.TryParse(id, out cardId))
+            {
+                CreditCard creditCard = creditCardDAO.GetById(cardId);
+                if (creditCard != null)
+                {
+                    ViewBag.NetworkList = ccnetworkDAO.List();
+                    return View(Mapper.Map<CreditCardFormModel>(creditCard));
+                }
+            }
+
+            TempData["card_not_found"] = id;
+            return RedirectToRoute("ListCreditCards");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("Edit/CreditCard")]
+        [Route("CreditCard/Edit", Name = "EditCreditCardPost")]
+        public ActionResult Edit(CreditCardFormModel modifiedCard)
+        {
+            if (ModelState.IsValid)
+            {
+                CreditCard creditCard = Mapper.Map<CreditCard>(modifiedCard);
+                creditCardDAO.Update(creditCard);
+                TempData["modifiedCard"] = creditCard;
+                return RedirectToRoute("ListCreditCards");
+            }
+            ViewBag.NetworkList = ccnetworkDAO.List();
+            return View(modifiedCard);
+        }
+
+        [HttpGet]
+        [Route("Delete/CreditCard/{id}")]
+        [Route("CreditCard/Delete/{id}", Name = "DeleteCreditCard")]
+        public ActionResult Delete(String id)
+        {
+            Guid cardId = Guid.Empty;
+            if (Guid.TryParse(id, out cardId))
+            {
+                CreditCard creditCard = creditCardDAO.GetById(cardId);
+                if (creditCard != null)
+                {
+                    return View(Mapper.Map<AnyGuidConfirmDelete>(creditCard));
+                }
+            }
+
+            TempData["card_not_found"] = id;
+            return RedirectToRoute("ListCreditCards");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("Delete/CreditCard")]
+        [Route("CreditCard/Delete", Name = "DeleteCreditCardPost")]
+        public ActionResult Delete(AnyGuidConfirmDelete model)
+        {
+            CreditCard card = Mapper.Map<CreditCard>(model);
+            creditCardDAO.Delete(card);
+            TempData["card_deleted"] = model.Name;
+            return RedirectToRoute("ListCreditCards");
+        }
     }
 }

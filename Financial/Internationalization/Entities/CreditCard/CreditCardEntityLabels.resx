@@ -120,8 +120,20 @@
   <data name="International" xml:space="preserve">
     <value>International</value>
   </data>
+  <data name="Message_ConfirmDelete" xml:space="preserve">
+    <value>Are you sure you want to Delete the '%c' card?</value>
+  </data>
+  <data name="Message_Deleted" xml:space="preserve">
+    <value>Credit Card '%c' was deleted.</value>
+  </data>
+  <data name="Message_Modified" xml:space="preserve">
+    <value>Credit Card '%c' was updated.</value>
+  </data>
   <data name="Message_New" xml:space="preserve">
     <value>Credit Card '%c' was added.</value>
+  </data>
+  <data name="Message_NotFoundById" xml:space="preserve">
+    <value>Credit Card with id '%i' don't exists.</value>
   </data>
   <data name="Network" xml:space="preserve">
     <value>Network</value>
@@ -137,6 +149,9 @@
   </data>
   <data name="This" xml:space="preserve">
     <value>Credit Card</value>
+  </data>
+  <data name="This_Delete_Title" xml:space="preserve">
+    <value>Delete this Credit Card</value>
   </data>
   <data name="This_Edit_Title" xml:space="preserve">
     <value>Modify this Credit Card </value>

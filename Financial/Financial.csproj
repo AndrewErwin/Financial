@@ -265,6 +265,7 @@
     </Compile>
     <Compile Include="Migrations\FinancialContextModelSnapshot.cs" />
     <Compile Include="DAO\Context\FinancialContext.cs" />
+    <Compile Include="Models\AnyGuidConfirmDelete.cs" />
     <Compile Include="Models\CreditCardFormModel.cs" />
     <Compile Include="Models\Entities\CreditCard.cs" />
     <Compile Include="Models\Entities\CreditCardNetwork.cs" />
@@ -304,6 +305,8 @@
     <Content Include="Views\CreditCard\List.cshtml" />
     <Content Include="Views\CreditCard\New.cshtml" />
     <Content Include="Views\Shared\_ValidateScripts.cshtml" />
+    <Content Include="Views\CreditCard\Edit.cshtml" />
+    <Content Include="Views\CreditCard\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
