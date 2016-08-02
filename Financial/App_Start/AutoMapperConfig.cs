@@ -24,6 +24,14 @@ namespace Financial.App_Start
                 {
                     o.MapFrom(m => new User() { Id = WebSecurity.CurrentUserId });
                 });
+
+            Mapper.CreateMap<CreditCard, AnyGuidConfirmDelete>().ForMember(c => c.Name, o => o.MapFrom(m => m.Nickname));
+            Mapper.CreateMap<AnyGuidConfirmDelete,CreditCard>().
+                ForMember(c=> c.Nickname, o=> o.MapFrom(m=>m.Name)).
+                ForMember(c => c.Owner, o =>
+                {
+                    o.MapFrom(m => new User() { Id = WebSecurity.CurrentUserId });
+                });
         }
     }
 }
