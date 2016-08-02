@@ -29,17 +29,17 @@ namespace Financial.Controllers
         }
 
         [HttpGet]
+        [Route("CreditCards")]
         [Route("List/CreditCard")]
-        [Route("CreditCard/List")]
-        [Route("CreditCards", Name = "ListCreditCards")]
+        [Route("CreditCard/List", Name = "ListCreditCards")]
         public ActionResult List()
         {
             return View(creditCardDAO.List(c => c.Network));
         }
 
         [HttpGet]
-        [Route("CreditCard/New")]
-        [Route("New/CreditCard", Name = "NewCreditCard")]
+        [Route("New/CreditCard")]
+        [Route("CreditCard/New", Name = "NewCreditCard")]
         public ActionResult New()
         {
             ViewBag.NetworkList = ccnetworkDAO.List();
@@ -48,7 +48,7 @@ namespace Financial.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("New/CreditCard", Name = "NewCreditCardPost")]
+        [Route("CreditCard/New", Name = "NewCreditCardPost")]
         public ActionResult New(CreditCardFormModel newCreditCard)
         {
             if (ModelState.IsValid)

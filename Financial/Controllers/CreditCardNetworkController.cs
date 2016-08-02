@@ -27,17 +27,17 @@ namespace Financial.Controllers
         }
 
         [HttpGet]
+        [Route("CreditCardNetworks")]
         [Route("List/CreditCardNetwork")]
-        [Route("CreditCardNetwork/List")]
-        [Route("CreditCardNetworks", Name = "ListCreditCardNetworks")]
+        [Route("CreditCardNetwork/List", Name = "ListCreditCardNetworks")]
         public ActionResult List()
         {
             return View(ccnetworkDAO.List());
         }
 
         [HttpGet]
-        [Route("CreditCardNetwork/New")]
-        [Route("New/CreditCardNetwork", Name = "NewCreditCardNetwork")]
+        [Route("New/CreditCardNetwork")]
+        [Route("CreditCardNetwork/New", Name = "NewCreditCardNetwork")]
         public ActionResult New()
         {
             ViewBag.ImageList = this.GetImageList();
@@ -46,8 +46,8 @@ namespace Financial.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("CreditCardNetwork/New")]
-        [Route("New/CreditCardNetwork", Name = "NewCreditCardNetworkPost")]
+        [Route("New/CreditCardNetwork")]
+        [Route("CreditCardNetwork/New", Name = "NewCreditCardNetworkPost")]
         public ActionResult New(CreditCardNetwork newNetwork)
         {
             if (ModelState.IsValid)
@@ -60,8 +60,8 @@ namespace Financial.Controllers
         }
 
         [HttpGet]
-        [Route("CreditCardNetwork/Edit/{id}")]
-        [Route("Edit/CreditCardNetwork/{id}", Name = "EditCreditCardNetwork")]
+        [Route("Edit/CreditCardNetwork/{id}")]
+        [Route("CreditCardNetwork/Edit/{id}", Name = "EditCreditCardNetwork")]
         public ActionResult Edit(String id)
         {
             Guid networkId = Guid.Empty;
@@ -81,8 +81,8 @@ namespace Financial.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("CreditCardNetwork/Edit")]
-        [Route("Edit/CreditCardNetwork", Name = "EditCreditCardNetworkPost")]
+        [Route("Edit/CreditCardNetwork")]
+        [Route("CreditCardNetwork/Edit", Name = "EditCreditCardNetworkPost")]
         public ActionResult Edit(CreditCardNetwork modifiedNetwork)
         {
             if (ModelState.IsValid)
