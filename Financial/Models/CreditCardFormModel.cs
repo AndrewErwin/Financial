@@ -9,9 +9,7 @@ using Financial.Internationalization.Entities.CreditCard;
 namespace Financial.Models
 {
     public class CreditCardFormModel
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    {        
         public Guid Id { get; set; }
 
         [Required]
