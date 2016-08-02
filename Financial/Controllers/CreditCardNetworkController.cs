@@ -65,10 +65,12 @@ namespace Financial.Controllers
         public ActionResult Edit(String id)
         {
             Guid networkId = Guid.Empty;
-            if (Guid.TryParse(id, out networkId))
+            Guid.TryParse(id, out networkId);
+            CreditCardNetwork ccnetwork = ccnetworkDAO.GetById(networkId);
+            if (ccnetwork != null)
             {
                 ViewBag.ImageList = this.GetImageList();
-                return View(ccnetworkDAO.GetById(networkId));
+                return View(ccnetwork);
             }
             else
             {
