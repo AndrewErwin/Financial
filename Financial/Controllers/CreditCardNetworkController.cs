@@ -62,18 +62,18 @@ namespace Financial.Controllers
         public ActionResult Edit(String id)
         {
             Guid networkId = Guid.Empty;
-            Guid.TryParse(id, out networkId);
-            CreditCardNetwork ccnetwork = ccnetworkDAO.GetById(networkId);
-            if (ccnetwork != null)
+            if (Guid.TryParse(id, out networkId))
             {
-                ViewBag.ImageList = this.GetImageList();
-                return View(ccnetwork);
+                CreditCardNetwork ccnetwork = ccnetworkDAO.GetById(networkId);
+                if (ccnetwork != null)
+                {
+                    ViewBag.ImageList = this.GetImageList();
+                    return View(ccnetwork);
+                }
             }
-            else
-            {
-                TempData["network_not_found"] = id;
-                return RedirectToRoute("ListCreditCardNetworks");
-            }
+
+            TempData["network_not_found"] = id;
+            return RedirectToRoute("ListCreditCardNetworks");
         }
 
         [HttpPost]
