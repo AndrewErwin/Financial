@@ -18,7 +18,7 @@ namespace Financial.DAO
             return includes.Aggregate(
                         purchases.AsQueryable(),
                         (query, include) => query.Include(include)
-                    ).Where(c => c.OwnerId == WebSecurity.CurrentUserId).OrderBy(c => c.Description).ToList();
+                    ).Where(p => p.OwnerId == WebSecurity.CurrentUserId).OrderByDescending(p => p.PurchasedOn).OrderBy(p => p.Description).ToList();
         }
 
         public override void Add(Purchase entity)
@@ -46,7 +46,7 @@ namespace Financial.DAO
             return includes.Aggregate(
                         purchase.AsQueryable(),
                         (query, include) => query.Include(include)
-                    ).Where(c => c.OwnerId == WebSecurity.CurrentUserId).FirstOrDefault();
+                    ).Where(p => p.OwnerId == WebSecurity.CurrentUserId).FirstOrDefault();
         }
     }
 }
