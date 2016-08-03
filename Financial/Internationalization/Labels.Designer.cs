@@ -88,6 +88,15 @@ namespace Financial.Internationalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to --.
+        /// </summary>
+        public static string EmptyColumn {
+            get {
+                return ResourceManager.GetString("EmptyColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {

@@ -133,7 +133,7 @@
     <value>Number of instalments</value>
   </data>
   <data name="Field_PurchasedOn" xml:space="preserve">
-    <value>Date of Purchase</value>
+    <value>Purchase Date</value>
   </data>
   <data name="Field_TotalAmount" xml:space="preserve">
     <value>Total Amount</value>
@@ -147,6 +147,9 @@
   <data name="Message_Deleted" xml:space="preserve">
     <value>Purchase '%p' was deleted.</value>
   </data>
+  <data name="Message_FinalPaymentOn" xml:space="preserve">
+    <value>Final Payment</value>
+  </data>
   <data name="Message_Modified" xml:space="preserve">
     <value>Purchase '%p' was updated.</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="Message_NotFoundById" xml:space="preserve">
     <value>Purchase with id '%i' don't exists.</value>
+  </data>
+  <data name="Message_PayWithCash" xml:space="preserve">
+    <value>Cash</value>
   </data>
   <data name="This" xml:space="preserve">
     <value>Purchase</value>

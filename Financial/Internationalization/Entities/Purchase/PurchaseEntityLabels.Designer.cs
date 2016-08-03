@@ -22,7 +22,7 @@ namespace Financial.Internationalization.Entities.Purchase {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class PurchaseEntityLabels {
+    public class PurchaseEntityLabels {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Financial.Internationalization.Entities.Purchase.PurchaseEntityLabels", typeof(PurchaseEntityLabels).Assembly);
@@ -51,7 +51,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Credit Card used.
         /// </summary>
-        internal static string Field_CreditCard {
+        public static string Field_CreditCard {
             get {
                 return ResourceManager.GetString("Field_CreditCard", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
-        internal static string Field_Description {
+        public static string Field_Description {
             get {
                 return ResourceManager.GetString("Field_Description", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Short description of the purchase.
         /// </summary>
-        internal static string Field_Description_Placeholder {
+        public static string Field_Description_Placeholder {
             get {
                 return ResourceManager.GetString("Field_Description_Placeholder", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Instalment Split.
         /// </summary>
-        internal static string Field_InstalmentSplit {
+        public static string Field_InstalmentSplit {
             get {
                 return ResourceManager.GetString("Field_InstalmentSplit", resourceCulture);
             }
@@ -99,16 +99,16 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Number of instalments.
         /// </summary>
-        internal static string Field_InstalmentSplit_Placeholder {
+        public static string Field_InstalmentSplit_Placeholder {
             get {
                 return ResourceManager.GetString("Field_InstalmentSplit_Placeholder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date of Purchase.
+        ///   Looks up a localized string similar to Purchase Date.
         /// </summary>
-        internal static string Field_PurchasedOn {
+        public static string Field_PurchasedOn {
             get {
                 return ResourceManager.GetString("Field_PurchasedOn", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Total Amount.
         /// </summary>
-        internal static string Field_TotalAmount {
+        public static string Field_TotalAmount {
             get {
                 return ResourceManager.GetString("Field_TotalAmount", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Total amount of this purchase.
         /// </summary>
-        internal static string Field_TotalAmount_Placeholder {
+        public static string Field_TotalAmount_Placeholder {
             get {
                 return ResourceManager.GetString("Field_TotalAmount_Placeholder", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to Delete the &apos;%p&apos; purchase?.
         /// </summary>
-        internal static string Message_ConfirmDelete {
+        public static string Message_ConfirmDelete {
             get {
                 return ResourceManager.GetString("Message_ConfirmDelete", resourceCulture);
             }
@@ -144,16 +144,25 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Purchase &apos;%p&apos; was deleted..
         /// </summary>
-        internal static string Message_Deleted {
+        public static string Message_Deleted {
             get {
                 return ResourceManager.GetString("Message_Deleted", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Final Payment.
+        /// </summary>
+        public static string Message_FinalPaymentOn {
+            get {
+                return ResourceManager.GetString("Message_FinalPaymentOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchase &apos;%p&apos; was updated..
         /// </summary>
-        internal static string Message_Modified {
+        public static string Message_Modified {
             get {
                 return ResourceManager.GetString("Message_Modified", resourceCulture);
             }
@@ -162,7 +171,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Purchase &apos;%p&apos; was added..
         /// </summary>
-        internal static string Message_New {
+        public static string Message_New {
             get {
                 return ResourceManager.GetString("Message_New", resourceCulture);
             }
@@ -171,7 +180,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to There&apos;s no registered Purchase yet..
         /// </summary>
-        internal static string Message_NoRegisteredYet {
+        public static string Message_NoRegisteredYet {
             get {
                 return ResourceManager.GetString("Message_NoRegisteredYet", resourceCulture);
             }
@@ -180,16 +189,25 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Purchase with id &apos;%i&apos; don&apos;t exists..
         /// </summary>
-        internal static string Message_NotFoundById {
+        public static string Message_NotFoundById {
             get {
                 return ResourceManager.GetString("Message_NotFoundById", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cash.
+        /// </summary>
+        public static string Message_PayWithCash {
+            get {
+                return ResourceManager.GetString("Message_PayWithCash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Purchase.
         /// </summary>
-        internal static string This {
+        public static string This {
             get {
                 return ResourceManager.GetString("This", resourceCulture);
             }
@@ -198,7 +216,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Delete this Purchase.
         /// </summary>
-        internal static string This_Delete_Title {
+        public static string This_Delete_Title {
             get {
                 return ResourceManager.GetString("This_Delete_Title", resourceCulture);
             }
@@ -207,7 +225,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Modify this Purchase.
         /// </summary>
-        internal static string This_Edit_Title {
+        public static string This_Edit_Title {
             get {
                 return ResourceManager.GetString("This_Edit_Title", resourceCulture);
             }
@@ -216,7 +234,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to List of your Purchases.
         /// </summary>
-        internal static string This_List_Title {
+        public static string This_List_Title {
             get {
                 return ResourceManager.GetString("This_List_Title", resourceCulture);
             }
@@ -225,7 +243,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Register new Purchase.
         /// </summary>
-        internal static string This_New_Title {
+        public static string This_New_Title {
             get {
                 return ResourceManager.GetString("This_New_Title", resourceCulture);
             }
@@ -234,7 +252,7 @@ namespace Financial.Internationalization.Entities.Purchase {
         /// <summary>
         ///   Looks up a localized string similar to Purchases.
         /// </summary>
-        internal static string This_Plural {
+        public static string This_Plural {
             get {
                 return ResourceManager.GetString("This_Plural", resourceCulture);
             }

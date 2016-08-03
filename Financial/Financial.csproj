@@ -223,6 +223,7 @@
     <Compile Include="Controllers\CreditCardNetworkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAO\CreditCardDAO.cs" />
     <Compile Include="DAO\CreditCardNetworkDAO.cs" />
@@ -319,6 +320,7 @@
     <Content Include="Views\Shared\_ValidateScripts.cshtml" />
     <Content Include="Views\CreditCard\Edit.cshtml" />
     <Content Include="Views\CreditCard\Delete.cshtml" />
+    <Content Include="Views\Purchase\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -336,7 +338,7 @@
       <LastGenOutput>CreditCardEntityLabels.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Internationalization\Entities\Purchase\PurchaseEntityLabels.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>PurchaseEntityLabels.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Internationalization\Labels.resx">

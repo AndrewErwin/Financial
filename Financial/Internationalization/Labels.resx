@@ -126,6 +126,9 @@
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="EmptyColumn" xml:space="preserve">
+    <value>--</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
