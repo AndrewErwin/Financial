@@ -70,6 +70,15 @@ namespace Financial.Internationalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose.
+        /// </summary>
+        public static string DefaultOptionSelect {
+            get {
+                return ResourceManager.GetString("DefaultOptionSelect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Delete {

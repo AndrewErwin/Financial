@@ -120,6 +120,9 @@
   <data name="Actions" xml:space="preserve">
     <value>Actions</value>
   </data>
+  <data name="DefaultOptionSelect" xml:space="preserve">
+    <value>Choose</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
