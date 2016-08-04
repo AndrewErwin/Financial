@@ -141,6 +141,9 @@
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="None" xml:space="preserve">
+    <value>None</value>
+  </data>
   <data name="Or" xml:space="preserve">
     <value>Or</value>
   </data>
