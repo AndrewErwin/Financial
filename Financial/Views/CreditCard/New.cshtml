@@ -23,7 +23,7 @@
         <div class="form-group">
             @Html.LabelFor(c => c.NetworkId, new { @class = "col-lg-2 control-label" })
             <div class="col-lg-4">
-                @Html.DropDownListFor(c => c.NetworkId, new SelectList(ViewBag.NetworkList, "Id", "DisplayName"), "Select", new { @class = "form-control" })
+                @Html.DropDownListFor(c => c.NetworkId, new SelectList(ViewBag.NetworkList, "Id", "DisplayName"), Labels.DefaultOptionSelect, new { @class = "form-control" })
                 @Html.ValidationMessageFor(c => c.NetworkId)
             </div>
         </div>
