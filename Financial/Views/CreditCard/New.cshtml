@@ -46,3 +46,11 @@
 @section Scripts{
     @Html.Partial("_ValidateScripts")
 }
+
+@section OnLoad{
+    <script>
+        $(function () {
+            $("#NetworkId option:first-child").attr("disabled", "disabled");
+        });
+    </script>
+}
