@@ -289,6 +289,10 @@
     <Compile Include="Migrations\20160805200903_CreateSubscription.designer.cs">
       <DependentUpon>20160805200903_CreateSubscription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20160805201934_RenameSubscriptionOwner.cs" />
+    <Compile Include="Migrations\20160805201934_RenameSubscriptionOwner.designer.cs">
+      <DependentUpon>20160805201934_RenameSubscriptionOwner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\FinancialContextModelSnapshot.cs" />
     <Compile Include="DAO\Context\FinancialContext.cs" />
     <Compile Include="Models\AnyGuidConfirmDelete.cs" />

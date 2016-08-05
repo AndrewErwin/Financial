@@ -33,7 +33,7 @@ namespace Financial.Models.Entities
         public virtual CreditCard CreditCard { get; set; }
 
         [Required]
-        public int UserId { get; set; }
-        public virtual User User { get; set; }
+        public int OwnerId { get; set; }
+        public virtual User Owner { get; set; }
     }
 }

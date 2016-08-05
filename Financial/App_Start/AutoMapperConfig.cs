@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using AutoMapper;
 using Financial.Models;
 using Financial.Models.Entities;
@@ -60,6 +57,30 @@ namespace Financial.App_Start
                     o.MapFrom(m => new User() { Id = WebSecurity.CurrentUserId });
                 });
 
+            #endregion
+
+            #region :: Subscription ::
+
+            Mapper.CreateMap<Subscription, SubscriptionFormModel>();
+            Mapper.CreateMap<SubscriptionFormModel, Subscription>().
+                ForMember(s => s.CreditCard, o =>
+                {
+                    o.MapFrom(m => new CreditCard() { Id = m.CreditCardId ?? Guid.Empty });
+                    o.Condition(m => m.CreditCardId != Guid.Empty);
+                }).
+                ForMember(s => s.Owner, o =>
+                {
+                    o.MapFrom(m => new User() { Id = WebSecurity.CurrentUserId });
+                });
+
+            Mapper.CreateMap<Subscription, AnyGuidConfirmDelete>().
+                ForMember(s => s.Name, o => o.MapFrom(m => m.Description));
+            Mapper.CreateMap<AnyGuidConfirmDelete, Subscription>().
+                ForMember(s => s.Description, o => o.MapFrom(m => m.Name)).
+                ForMember(s => s.Owner, o =>
+                {
+                    o.MapFrom(m => new User() { Id = WebSecurity.CurrentUserId });
+                });
             #endregion
         }
     }
