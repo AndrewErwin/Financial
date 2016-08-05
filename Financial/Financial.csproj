@@ -230,6 +230,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\PurchaseController.cs" />
+    <Compile Include="Controllers\SubscriptionController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAO\CreditCardDAO.cs" />
     <Compile Include="DAO\CreditCardNetworkDAO.cs" />
@@ -350,6 +351,7 @@
     <Content Include="Views\Purchase\Delete.cshtml" />
     <Content Include="Views\CreditCard\Details.cshtml" />
     <Content Include="Views\Shared\_InvoiceTable.cshtml" />
+    <Content Include="Views\Subscription\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

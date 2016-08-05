@@ -1,0 +1,117 @@
+﻿@model List<Financial.Models.Entities.Subscription>
+
+@using Financial.Internationalization
+@using Financial.Internationalization.Entities.Subscription
+
+@{
+    ViewBag.Title = SubscriptionEntityLabels.This_Plural;
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>
+            <span class="fa fa-barcode fa-lg ico-padding" aria-hidden="true"></span>@SubscriptionEntityLabels.This_List_Title
+        </h4>
+    </div>
+    <div class="panel-body">
+        <section class="row section-header-btns">
+            <div class="col-lg-1">
+                <a href="#" class="btn btn-success btn-sm" title="@Labels.New @SubscriptionEntityLabels.This">
+                    <span class="fa fa-plus ico-padding" aria-hidden="true"></span>@Labels.New
+                </a>
+            </div>
+            <div class="col-lg-11">
+            </div>
+        </section>
+
+        <section class="row">
+            <div class="col-lg-12">
+                <table class="table table-responsive table-condensed @(Model.Any() ? "table-hover" : "")">
+                    <thead>
+                        <tr>
+                            <th>@SubscriptionEntityLabels.Field_Description</th>
+                            <th class="col-lg-1 text-center">
+                                <span class="fa fa-calendar-check-o fa-lg" aria-hidden="true"></span>
+                                <span class="sr-only">@SubscriptionEntityLabels.Field_SignatureDate</span>
+                            </th>
+                            <th class="col-lg-1 text-center">
+                                <span class="fa fa-calendar-times-o fa-lg" aria-hidden="true"></span>
+                                <span class="sr-only">@SubscriptionEntityLabels.Field_CancellationDate</span>
+                            </th>
+                            <th class="col-lg-1 text-center">
+                                <span class="fa fa-money fa-lg" aria-hidden="true"></span>
+                                <span class="sr-only">@SubscriptionEntityLabels.Field_Price</span>
+                            </th>
+                            <th class="col-lg-1 text-center">
+                                <span class="fa fa-credit-card-alt fa-lg" aria-hidden="true"></span>
+                                <span class="sr-only">@SubscriptionEntityLabels.Field_CreditCard</span>
+                            </th>
+                            <th class="col-lg-1 text-center">@Labels.Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th class="text-center">@SubscriptionEntityLabels.Field_SignatureDate</th>
+                            <th class="text-center">@SubscriptionEntityLabels.Field_CancellationDate</th>
+                            <th class="text-center">@SubscriptionEntityLabels.Field_Price</th>
+                            <th class="text-center">@SubscriptionEntityLabels.Field_CreditCard</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @if (Model.Any())
+                        {
+                            foreach (var subscription in Model)
+                            {
+                                <tr id="@subscription.Id">
+                                    <td class="text-middle">@subscription.Description</td>
+                                    <td class="text-center text-middle">@subscription.SignatureDate.ToString("d")</td>
+                                    <td class="text-center text-middle">
+                                        @if (subscription.CancellationDate != null)
+                                        {
+                                            <span>@string.Format("{0:d}", @subscription.CancellationDate)</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">@Labels.EmptyColumn</span>
+                                        }
+                                    </td>
+                                    <td class="text-center text-middle">@subscription.Price.ToString("c")</td>
+                                    <td class="text-middle text-center">
+                                        @if (subscription.CreditCard != null)
+                                        {
+                                            <a href="@Url.RouteUrl("DetailsCreditCard", new { id = subscription.CreditCard.Id })">@subscription.CreditCard.Nickname</a>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">@Labels.EmptyColumn</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <div class="text-center text-middle">
+                                            <a href="#" class="btn btn-primary btn-sm" title="@Labels.Edit">
+                                                <span class="fa fa-pencil" aria-hidden="true"></span>
+                                                <span class="sr-only">@Labels.Edit</span>
+                                            </a>
+                                            <a href="#" class="btn btn-danger btn-sm" title="@Labels.Delete">
+                                                <span class="fa fa-trash" aria-hidden="true"></span>
+                                                <span class="sr-only">@Labels.Delete</span>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6" class="text-center"><em>@SubscriptionEntityLabels.Message_NoRegisteredYet</em></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>

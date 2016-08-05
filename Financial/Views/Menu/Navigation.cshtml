@@ -1,26 +1,33 @@
 ﻿@using Financial.Internationalization
 @using Financial.Internationalization.Entities.CreditCard
 @using Financial.Internationalization.Entities.Purchase
+@using Financial.Internationalization.Entities.Subscription
 
 @if (WebSecurity.IsAuthenticated)
 {
     <li>
         <a href="@Url.RouteUrl("Start")" title="@Labels.Start">
-            <span class="fa fa-home" aria-hidden="true"></span>
+            <span class="fa fa-home fa-lg" aria-hidden="true"></span>
             <span class="sr-only">@Labels.Start</span>
         </a>
     </li>
 
     <li>
         <a href="@Url.RouteUrl("ListCreditCards")" title="@CreditCardEntityLabels.This_Plural">
-            <span class="fa fa-credit-card-alt ico-padding" aria-hidden="true"></span>@CreditCardEntityLabels.This_Plural
+            <span class="fa fa-credit-card-alt fa-lg ico-padding" aria-hidden="true"></span>@CreditCardEntityLabels.This_Plural
             
         </a>
     </li>
 
     <li>
         <a href="@Url.RouteUrl("ListPurchases")" title="@PurchaseEntityLabels.This_Plural">
-            <span class="fa fa-shopping-cart ico-padding" aria-hidden="true"></span>@PurchaseEntityLabels.This_Plural
+            <span class="fa fa-shopping-cart fa-lg ico-padding" aria-hidden="true"></span>@PurchaseEntityLabels.This_Plural
         </a>
-    </li>    
+    </li>
+
+    <li>
+        <a href="@Url.RouteUrl("ListSubscriptions")" title="@SubscriptionEntityLabels.This_Plural">
+            <span class="fa fa-barcode fa-lg ico-padding" aria-hidden="true"></span>@SubscriptionEntityLabels.This_Plural
+        </a>
+    </li>
 }
