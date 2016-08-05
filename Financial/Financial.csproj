@@ -301,6 +301,7 @@
     <Compile Include="Models\InvoiceDetailModel.cs" />
     <Compile Include="Models\InvoiceModel.cs" />
     <Compile Include="Models\PurchaseFormModel.cs" />
+    <Compile Include="Models\SubscriptionFormModel.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Models\UserSignUpModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
