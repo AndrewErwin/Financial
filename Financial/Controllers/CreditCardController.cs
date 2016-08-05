@@ -35,6 +35,24 @@ namespace Financial.Controllers
         }
 
         [HttpGet]
+        [Route("Details/CreditCard/{id}")]
+        [Route("CreditCard/Details/{id}", Name = "DetailsCreditCard")]
+        public ActionResult Details(String id)
+        {
+            Guid cardId = Guid.Empty;
+            if (Guid.TryParse(id, out cardId))
+            {
+                CreditCard creditCard = creditCardDAO.GetById(cardId, c=>c.Network);
+                if (creditCard != null)
+                {
+                    return View(creditCard);
+                }
+            }
+            TempData["card_not_found"] = id;
+            return RedirectToRoute("ListCreditCards");
+        }
+
+        [HttpGet]
         [Route("New/CreditCard")]
         [Route("CreditCard/New", Name = "NewCreditCard")]
         public ActionResult New()

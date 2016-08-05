@@ -79,7 +79,7 @@
                             foreach (var card in @Model)
                             {
                                 <tr id="@card.Id">
-                                    <td class="text-middle">@card.Nickname</td>
+                                    <td class="text-middle"><a href="@Url.RouteUrl("DetailsCreditCard", new { id = card.Id })" title="@card.Nickname">@card.Nickname</a></td>
                                     <td class="text-center text-middle"><img src="~/Content/images/ccnetworks/@card.Network.ImageName" title="@card.Network.DisplayName" /><span class="sr-only">@card.Network.DisplayName</span></td>
                                     <td class="text-center text-middle">
                                         @if (card.International)

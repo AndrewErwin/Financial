@@ -178,6 +178,15 @@ namespace Financial.Internationalization.Entities.CreditCard {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invoice.
+        /// </summary>
+        public static string This_Invoice {
+            get {
+                return ResourceManager.GetString("This_Invoice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to List of your Credit Cards.
         /// </summary>
         public static string This_List_Title {

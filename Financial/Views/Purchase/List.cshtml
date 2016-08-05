@@ -125,7 +125,7 @@
                                     <td class="text-middle text-center">
                                         @if (purchase.CreditCard != null)
                                         {
-                                            <a href="#">@purchase.CreditCard.Nickname</a>
+                                            <a href="@Url.RouteUrl("DetailsCreditCard", new { id = purchase.CreditCard.Id })">@purchase.CreditCard.Nickname</a>
                                         }
                                         else
                                         {
