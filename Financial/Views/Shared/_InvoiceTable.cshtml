@@ -1,0 +1,58 @@
+﻿@model Financial.Models.InvoiceModel
+
+<table class="table table-responsive table-condensed @(Model.Details.Any() ? "table-hover" : "")">
+    <thead>
+        <tr>
+            <th colspan="4" class="text-center">
+                @Model.Begin.ToString("d")
+                &harr;
+                @Model.End.ToString("d")
+            </th>
+        </tr>
+        <tr>
+            <th class="col-lg-1 text-center"><span class="fa fa-calendar-o fa-lg" aria-hidden="true"></span></th>
+            <th>@Financial.Internationalization.Entities.CreditCard.CreditCardEntityLabels.InvoiceDetail_Description</th>
+            <th class="col-lg-2 text-center">
+                <span class="fa fa-money fa-lg" aria-hidden="true"></span>
+            </th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+            <td class="text-center">@string.Format("{0:c}", Model.Details.Sum(v => v.Value))</td>
+        </tr>
+    </tfoot>
+    <tbody>
+        @if (Model.Details.Any())
+        {
+            foreach (var detail in Model.Details)
+            {
+                <tr>
+                    <td class="text-center text-middle"><span title="@string.Format("{0:d}", detail.Date.Date)">@detail.Date.Day</span></td>
+                    <td>
+                        <span class="@detail.Icon ico-padding" aria-hidden="true"></span>
+                        <a href="@Url.RouteUrl(detail.RouteToEntity, new { id = detail.Id })">@detail.Description</a>&nbsp;
+
+                        @if (detail.Splits > 1)
+                        {
+                            <em>(@detail.AtualSplit / @detail.Splits)</em>
+                        }
+                        else
+                        {
+                            <em>(@Financial.Internationalization.Entities.Purchase.PurchaseEntityLabels.Message_PayWithCash)</em>
+                        }
+
+                    </td>
+                    <td class="text-center text-middle">@string.Format("{0:N2}", detail.Value)</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+        }
+    </tbody>
+</table>

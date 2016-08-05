@@ -58,10 +58,8 @@
                 @CreditCardEntityLabels.This_Invoice
             </h3>
         </div>
-        <div class="panel-body">
-            <div class="text-center">
-                <h2>@Labels.ComingSoon</h2>
-            </div>
+        <div class="panel-body">            
+            @Html.Partial("_InvoiceTable", ViewData["Invoice"])
         </div>
     </div>
 </section>

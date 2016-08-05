@@ -36,15 +36,20 @@ namespace Financial.Controllers
 
         [HttpGet]
         [Route("Details/CreditCard/{id}")]
-        [Route("CreditCard/Details/{id}", Name = "DetailsCreditCard")]
-        public ActionResult Details(String id)
+        [Route("Details/CreditCard/{id}/invoice/{month}")]
+        [Route("CreditCard/Details/{id}")]
+        [Route("CreditCard/Details/{id}/invoice/{month}")]
+        [Route("Details/CreditCard/{id}/invoice/{month}/{year}")]
+        [Route("CreditCard/Details/{id}/invoice/{month}/{year}", Name = "DetailsCreditCard")]
+        public ActionResult Details(String id, int? month, int? year)
         {
             Guid cardId = Guid.Empty;
             if (Guid.TryParse(id, out cardId))
             {
-                CreditCard creditCard = creditCardDAO.GetById(cardId, c=>c.Network);
+                CreditCard creditCard = creditCardDAO.GetById(cardId, c => c.Network);
                 if (creditCard != null)
                 {
+                    ViewData.Add("Invoice", creditCardDAO.GetInvoice(creditCard.Id, month, year));
                     return View(creditCard);
                 }
             }

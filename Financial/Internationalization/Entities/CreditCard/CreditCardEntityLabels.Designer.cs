@@ -70,6 +70,33 @@ namespace Financial.Internationalization.Entities.CreditCard {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Day.
+        /// </summary>
+        public static string InvoiceDetail_Day {
+            get {
+                return ResourceManager.GetString("InvoiceDetail_Day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string InvoiceDetail_Description {
+            get {
+                return ResourceManager.GetString("InvoiceDetail_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string InvoiceDetail_Value {
+            get {
+                return ResourceManager.GetString("InvoiceDetail_Value", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to Delete the &apos;%c&apos; card?.
         /// </summary>
         public static string Message_ConfirmDelete {

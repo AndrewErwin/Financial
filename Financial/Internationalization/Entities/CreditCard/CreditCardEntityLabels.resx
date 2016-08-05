@@ -120,6 +120,15 @@
   <data name="International" xml:space="preserve">
     <value>International</value>
   </data>
+  <data name="InvoiceDetail_Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="InvoiceDetail_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="InvoiceDetail_Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
   <data name="Message_ConfirmDelete" xml:space="preserve">
     <value>Are you sure you want to Delete the '%c' card?</value>
   </data>

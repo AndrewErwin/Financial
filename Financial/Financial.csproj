@@ -220,6 +220,11 @@
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Content\Icons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\CreditCardController.cs" />
     <Compile Include="Controllers\CreditCardNetworkController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -283,6 +288,8 @@
     <Compile Include="Models\Entities\CreditCardNetwork.cs" />
     <Compile Include="Models\Entities\Purchase.cs" />
     <Compile Include="Models\Entities\User.cs" />
+    <Compile Include="Models\InvoiceDetailModel.cs" />
+    <Compile Include="Models\InvoiceModel.cs" />
     <Compile Include="Models\PurchaseFormModel.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Models\UserSignUpModel.cs" />
@@ -326,6 +333,7 @@
     <Content Include="Views\Purchase\Edit.cshtml" />
     <Content Include="Views\Purchase\Delete.cshtml" />
     <Content Include="Views\CreditCard\Details.cshtml" />
+    <Content Include="Views\Shared\_InvoiceTable.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -334,6 +342,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Content\Icons.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Internationalization\Entities\CreditCardNetwork\CCNetworkEntityLabels.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>CCNetworkEntityLabels.Designer.cs</LastGenOutput>
