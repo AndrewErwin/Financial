@@ -46,7 +46,7 @@ namespace Financial.DAO
             return includes.Aggregate(
                         purchase.AsQueryable(),
                         (query, include) => query.Include(include)
-                    ).Where(p => p.OwnerId == WebSecurity.CurrentUserId).FirstOrDefault();
+                    ).Where(p => p.OwnerId == WebSecurity.CurrentUserId && p.Id == entityId).FirstOrDefault();
         }
     }
 }
