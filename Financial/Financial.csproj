@@ -235,6 +235,7 @@
     <Compile Include="DAO\CreditCardNetworkDAO.cs" />
     <Compile Include="DAO\DAO.cs" />
     <Compile Include="DAO\PurchaseDAO.cs" />
+    <Compile Include="DAO\SubscriptionDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
