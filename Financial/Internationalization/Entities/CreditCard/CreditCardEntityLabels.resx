@@ -130,7 +130,7 @@
     <value>Value</value>
   </data>
   <data name="Invoice_Empty" xml:space="preserve">
-    <value>No entries will be shown</value>
+    <value>No entries to be shown</value>
   </data>
   <data name="Message_ConfirmDelete" xml:space="preserve">
     <value>Are you sure you want to Delete the '%c' card?</value>
