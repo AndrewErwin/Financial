@@ -70,6 +70,15 @@ namespace Financial.Internationalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Coming Soon.
+        /// </summary>
+        public static string ComingSoon {
+            get {
+                return ResourceManager.GetString("ComingSoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Choose.
         /// </summary>
         public static string DefaultOptionSelect {
@@ -84,6 +93,15 @@ namespace Financial.Internationalization {
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
             }
         }
         
