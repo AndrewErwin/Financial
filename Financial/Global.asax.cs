@@ -16,7 +16,7 @@ namespace Financial
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AutoMapperConfig.ConfigureAutoMapper();
-            WebSecurity.InitializeDatabaseConnection("Financial", "Users", "Id", "Login", true);
+            WebSecurity.InitializeDatabaseConnection("Financial", "Users", "Id", "Login", true);            
         }
     }
 }

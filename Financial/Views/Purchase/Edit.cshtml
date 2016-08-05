@@ -1,0 +1,75 @@
+﻿@model Financial.Models.PurchaseFormModel
+
+@using Financial.Internationalization
+@using Financial.Internationalization.Entities.Purchase
+
+@{
+    ViewBag.Title = PurchaseEntityLabels.This_Edit_Title;
+}
+
+@using (Html.BeginRouteForm("EditPurchasePost", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(p=>p.Id)
+        <legend>
+            <span class="fa fa-shopping-cart ico-padding text-primary"></span>
+            @PurchaseEntityLabels.This_Edit_Title
+        </legend>
+
+        <div class="form-group">
+            @Html.LabelFor(p => p.Description, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(c => c.Description, new { @class = "form-control", placeholder = PurchaseEntityLabels.Field_Description_Placeholder, autofocus = "" })
+                @Html.ValidationMessageFor(c => c.Description)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(p => p.PurchasedOn, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(p => p.PurchasedOn, new { @class = "form-control", type = "date", @Value = string.Format("{0:yyyy-MM-dd}", Model.PurchasedOn) })
+                @Html.ValidationMessageFor(p => p.PurchasedOn)                
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(p => p.InstalmentSplit, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(p => p.InstalmentSplit, new { @class = "form-control", type = "number", min = "1", max = "1200", step = "1", placeholder = PurchaseEntityLabels.Field_InstalmentSplit_Placeholder })
+                @Html.ValidationMessageFor(p => p.InstalmentSplit)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(p => p.TotalAmount, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(p => p.TotalAmount, new { @class = "form-control", type = "number", min = "0.01", max = "any", step = "0.01", @Value = Model.TotalAmount, placeholder = PurchaseEntityLabels.Field_TotalAmount_Placeholder })
+                @Html.ValidationMessageFor(p => p.TotalAmount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(p => p.CreditCardId, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="fa fa-credit-card-alt"></span>
+                    </span>
+                    @Html.DropDownListFor(p => p.CreditCardId, new SelectList(ViewBag.CreditCardList, "Id", "NickName"), Labels.None, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(p => p.CreditCardId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary" title="@Labels.Register">
+                    <span class="fa fa-floppy-o" aria-hidden="true"></span>
+                    @Labels.SaveChanges
+                </button>
+            </div>
+        </div>
+
+    </fieldset>
+}
