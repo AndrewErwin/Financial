@@ -254,6 +254,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PurchaseEntityLabels.resx</DependentUpon>
     </Compile>
+    <Compile Include="Internationalization\Entities\Subscription\SubscriptionEntityLabels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SubscriptionEntityLabels.resx</DependentUpon>
+    </Compile>
     <Compile Include="Internationalization\Labels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -280,6 +285,10 @@
     <Compile Include="Migrations\20160802220053_CreatePurchase.designer.cs">
       <DependentUpon>20160802220053_CreatePurchase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20160805200903_CreateSubscription.cs" />
+    <Compile Include="Migrations\20160805200903_CreateSubscription.designer.cs">
+      <DependentUpon>20160805200903_CreateSubscription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\FinancialContextModelSnapshot.cs" />
     <Compile Include="DAO\Context\FinancialContext.cs" />
     <Compile Include="Models\AnyGuidConfirmDelete.cs" />
@@ -287,6 +296,7 @@
     <Compile Include="Models\Entities\CreditCard.cs" />
     <Compile Include="Models\Entities\CreditCardNetwork.cs" />
     <Compile Include="Models\Entities\Purchase.cs" />
+    <Compile Include="Models\Entities\Subscription.cs" />
     <Compile Include="Models\Entities\User.cs" />
     <Compile Include="Models\InvoiceDetailModel.cs" />
     <Compile Include="Models\InvoiceModel.cs" />
@@ -357,6 +367,10 @@
     <EmbeddedResource Include="Internationalization\Entities\Purchase\PurchaseEntityLabels.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>PurchaseEntityLabels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Internationalization\Entities\Subscription\SubscriptionEntityLabels.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SubscriptionEntityLabels.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Internationalization\Labels.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

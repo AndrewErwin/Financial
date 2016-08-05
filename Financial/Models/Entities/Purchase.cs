@@ -14,7 +14,7 @@ namespace Financial.Models.Entities
 
         [Required]
         [Display(ResourceType = typeof(PurchaseEntityLabels), Name = "Field_Description")]
-        [StringLength(20, MinimumLength = 5)]
+        [StringLength(50, MinimumLength = 5)]
         public String Description { get; set; }
 
         [Required]

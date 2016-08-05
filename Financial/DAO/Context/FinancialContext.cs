@@ -10,6 +10,7 @@ namespace Financial.Models.Context
         public DbSet<CreditCardNetwork> CreditCardNetworks { get; set; }
         public DbSet<CreditCard> CreditCards { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
