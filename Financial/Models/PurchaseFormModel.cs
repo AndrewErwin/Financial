@@ -10,11 +10,10 @@ namespace Financial.Models
 
         [Required]
         [Display(ResourceType = typeof(PurchaseEntityLabels), Name = "Field_Description")]
-        [StringLength(20, MinimumLength = 5)]
+        [StringLength(50, MinimumLength = 5)]
         public String Description { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
         [Display(ResourceType = typeof(PurchaseEntityLabels), Name = "Field_PurchasedOn")]
         public DateTime PurchasedOn { get; set; }
 
@@ -23,14 +22,10 @@ namespace Financial.Models
         public int InstalmentSplit { get; set; }
 
         [Required]
-        [DataType(DataType.Currency)]
         [Display(ResourceType = typeof(PurchaseEntityLabels), Name = "Field_TotalAmount")]
         public Decimal TotalAmount { get; set; }
 
         [Display(ResourceType = typeof(PurchaseEntityLabels), Name = "Field_CreditCard")]
         public Guid? CreditCardId { get; set; }
-
-        [Required]
-        public int OwnerId { get; set; }
     }
 }
