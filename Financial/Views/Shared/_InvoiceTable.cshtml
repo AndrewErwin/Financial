@@ -10,9 +10,9 @@
             </th>
         </tr>
         <tr>
-            <th class="col-lg-1 text-center"><span class="fa fa-calendar-o fa-lg" aria-hidden="true"></span></th>
+            <th class="col-md-1 col-lg-1 text-center"><span class="fa fa-calendar-o fa-lg" aria-hidden="true"></span></th>
             <th>@Financial.Internationalization.Entities.CreditCard.CreditCardEntityLabels.InvoiceDetail_Description</th>
-            <th class="col-lg-2 text-center">
+            <th class="col-md-2 col-lg-2 text-center">
                 <span class="fa fa-money fa-lg" aria-hidden="true"></span>
             </th>
         </tr>
@@ -20,7 +20,7 @@
     <tfoot>
         <tr>
             <td colspan="2">&nbsp;</td>
-            <td class="text-center">@string.Format("{0:c}", Model.Details.Sum(v => v.Value))</td>
+            <td class="text-center"><strong>@string.Format("{0:c}", Model.Details.Sum(v => v.Value))</strong></td>
         </tr>
     </tfoot>
     <tbody>
@@ -51,7 +51,7 @@
         else
         {
             <tr>
-                <td colspan="3">&nbsp;</td>
+                <td colspan="3" class="text-center text-middle">@Financial.Internationalization.Entities.CreditCard.CreditCardEntityLabels.Invoice_Empty</td>
             </tr>
         }
     </tbody>

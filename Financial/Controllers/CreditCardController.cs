@@ -35,12 +35,12 @@ namespace Financial.Controllers
         }
 
         [HttpGet]
-        [Route("Details/CreditCard/{id}")]
-        [Route("Details/CreditCard/{id}/invoice/{month}")]
-        [Route("CreditCard/Details/{id}")]
-        [Route("CreditCard/Details/{id}/invoice/{month}")]
         [Route("Details/CreditCard/{id}/invoice/{month}/{year}")]
-        [Route("CreditCard/Details/{id}/invoice/{month}/{year}", Name = "DetailsCreditCard")]
+        [Route("Details/CreditCard/{id}/invoice/{month}")]
+        [Route("Details/CreditCard/{id}")]
+        [Route("CreditCard/Details/{id}/invoice/{month}/{year}", Name="DetailsInvoiceCreditCard")]
+        [Route("CreditCard/Details/{id}/invoice/{month}")]
+        [Route("CreditCard/Details/{id}", Name = "DetailsCreditCard")]
         public ActionResult Details(String id, int? month, int? year)
         {
             Guid cardId = Guid.Empty;

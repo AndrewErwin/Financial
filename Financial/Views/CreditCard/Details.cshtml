@@ -6,7 +6,7 @@
 @{
     ViewBag.Title = "Detail";
 }
-<section class="col-lg-3">
+<section class="col-md-3 col-lg-3">
     <div class="panel panel-info">
         <div class="panel-heading">
             <h3 class="panel-title">
@@ -50,7 +50,7 @@
     </div>
 </section>
 
-<section class="col-lg-9">
+<section class="col-md-9 col-lg-9">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">
@@ -58,7 +58,21 @@
                 @CreditCardEntityLabels.This_Invoice
             </h3>
         </div>
-        <div class="panel-body">            
+        <div class="panel-body">
+            <div class="col-lg-12 text-center">
+                <ul class="pagination pagination-sm">
+                    @for (int i = -6; i <= 6; i++)
+                    {
+                        Financial.Models.InvoiceModel invoice = (Financial.Models.InvoiceModel)ViewData["Invoice"];
+                        <li class="text-middle text-center @(i == 0 ? "active" : "")">
+                            <a href="@Url.RouteUrl("DetailsInvoiceCreditCard", new { id = Model.Id, month = invoice.Begin.AddMonths(i).Month, year = invoice.Begin.AddMonths(i).Year })">
+                                @invoice.Begin.AddMonths(i).ToString("MMM")<br />
+                                @invoice.Begin.AddMonths(i).ToString("yyyy")<br />
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
             @Html.Partial("_InvoiceTable", ViewData["Invoice"])
         </div>
     </div>

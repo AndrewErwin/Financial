@@ -70,6 +70,15 @@ namespace Financial.Internationalization.Entities.CreditCard {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No entries will be shown.
+        /// </summary>
+        public static string Invoice_Empty {
+            get {
+                return ResourceManager.GetString("Invoice_Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Day.
         /// </summary>
         public static string InvoiceDetail_Day {
