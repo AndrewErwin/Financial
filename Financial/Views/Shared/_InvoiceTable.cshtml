@@ -34,15 +34,17 @@
                         <span class="@detail.Icon ico-padding" aria-hidden="true"></span>
                         <a href="@Url.RouteUrl(detail.RouteToEntity, new { id = detail.Id })">@detail.Description</a>&nbsp;
 
-                        @if (detail.Splits > 1)
+                        @if (detail.Splits != 0)
                         {
-                            <em>(@detail.AtualSplit / @detail.Splits)</em>
+                            if (detail.Splits > 1)
+                            {
+                                <em>(@detail.AtualSplit / @detail.Splits)</em>
+                            }
+                            else
+                            {
+                                <em>(@Financial.Internationalization.Entities.Purchase.PurchaseEntityLabels.Message_PayWithCash)</em>
+                            }
                         }
-                        else
-                        {
-                            <em>(@Financial.Internationalization.Entities.Purchase.PurchaseEntityLabels.Message_PayWithCash)</em>
-                        }
-
                     </td>
                     <td class="text-center text-middle">@string.Format("{0:N2}", detail.Value)</td>
                 </tr>

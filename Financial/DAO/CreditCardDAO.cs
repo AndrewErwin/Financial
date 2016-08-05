@@ -64,29 +64,56 @@ namespace Financial.DAO
                                 .Where(p => (
                                                 (
                                                     p.InstalmentSplit > 1
-                                                    && p.PurchasedOn.Date <= invoiceBegin
+                                                    && p.PurchasedOn.Date <= invoiceEnd
                                                     && invoiceBegin <= p.PurchasedOn.AddMonths(p.InstalmentSplit - 1).Date
                                                 )
                                                 ||
                                                 (
                                                     p.InstalmentSplit == 1
                                                     && invoiceBegin <= p.PurchasedOn.Date
-                                                    && p.PurchasedOn <= invoiceEnd
+                                                    && p.PurchasedOn.Date <= invoiceEnd
                                                 )
                                             )
-                                        );
+                                        )
+                                .Select(p => new InvoiceDetailModel()
+                                    {
+                                        Id = p.Id,
+                                        Date = p.PurchasedOn,
+                                        Description = p.Description,
+                                        AtualSplit = (((invoiceBegin.Year * 12) + invoiceBegin.Month) - ((p.PurchasedOn.Year * 12) + p.PurchasedOn.Month)) + 1,
+                                        Splits = p.InstalmentSplit,
+                                        Value = (p.TotalAmount / p.InstalmentSplit),
+                                        Icon = Icons.Purchase,
+                                        RouteToEntity = "EditPurchase"
+                                    }
+                                );
 
-            var invoice = purchases.Select(p => new InvoiceDetailModel()
-                            {
-                                Id = p.Id,
-                                Date = p.PurchasedOn,
-                                Description = p.Description,
-                                AtualSplit = (((invoiceBegin.Year * 12) + invoiceBegin.Month) - ((p.PurchasedOn.Year * 12) + p.PurchasedOn.Month)) + 1,
-                                Splits = p.InstalmentSplit,
-                                Value = (p.TotalAmount / p.InstalmentSplit),
-                                Icon = Icons.Purchase,
-                                RouteToEntity = "EditPurchase"
-                            });
+            var subscriptions = this.Context.Subscriptions
+                                    .Where(s => (
+                                                    (
+                                                        s.CancellationDate == null
+                                                        && s.SignatureDate.Date <= invoiceEnd
+                                                    )
+                                                    ||
+                                                    (
+                                                        s.CancellationDate != null
+                                                        && s.CancellationDate.Value.Date >= invoiceBegin
+                                                        && s.SignatureDate.Date <= invoiceEnd
+                                                    )
+                                                )
+                                            )
+                                    .Select(s => new InvoiceDetailModel()
+                                    {
+                                        Id = s.Id,
+                                        Date = s.SignatureDate,
+                                        Description = s.Description,
+                                        Value = s.Price,
+                                        Icon = Icons.Subscription,
+                                        RouteToEntity = "ListSubscriptions"
+                                    }).ToList();
+
+            var invoice = purchases.ToList();
+            invoice.AddRange(subscriptions);
 
             return
                 new InvoiceModel()
