@@ -77,5 +77,14 @@ namespace Financial.Content {
                 return ResourceManager.GetString("Purchase", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fa fa-barcode.
+        /// </summary>
+        public static string Subscription {
+            get {
+                return ResourceManager.GetString("Subscription", resourceCulture);
+            }
+        }
     }
 }

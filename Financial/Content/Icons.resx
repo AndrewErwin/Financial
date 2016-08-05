@@ -123,4 +123,7 @@
   <data name="Purchase" xml:space="preserve">
     <value>fa fa-shopping-cart</value>
   </data>
+  <data name="Subscription" xml:space="preserve">
+    <value>fa fa-barcode</value>
+  </data>
 </root>
