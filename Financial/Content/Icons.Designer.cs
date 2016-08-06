@@ -70,11 +70,29 @@ namespace Financial.Content {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to fa fa-plus.
+        /// </summary>
+        public static string New {
+            get {
+                return ResourceManager.GetString("New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to fa fa-shopping-cart.
         /// </summary>
         public static string Purchase {
             get {
                 return ResourceManager.GetString("Purchase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to fa fa-floppy-o.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
         

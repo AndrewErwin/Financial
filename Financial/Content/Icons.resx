@@ -120,8 +120,14 @@
   <data name="CreditCard" xml:space="preserve">
     <value>fa fa-credit-card-alt</value>
   </data>
+  <data name="New" xml:space="preserve">
+    <value>fa fa-plus</value>
+  </data>
   <data name="Purchase" xml:space="preserve">
     <value>fa fa-shopping-cart</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>fa fa-floppy-o</value>
   </data>
   <data name="Subscription" xml:space="preserve">
     <value>fa fa-barcode</value>

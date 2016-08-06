@@ -352,6 +352,9 @@
     <Content Include="Views\CreditCard\Details.cshtml" />
     <Content Include="Views\Shared\_InvoiceTable.cshtml" />
     <Content Include="Views\Subscription\List.cshtml" />
+    <Content Include="Views\Subscription\New.cshtml" />
+    <Content Include="Views\Subscription\Delete.cshtml" />
+    <Content Include="Views\Subscription\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

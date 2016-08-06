@@ -1,0 +1,74 @@
+﻿@model Financial.Models.SubscriptionFormModel
+
+@using Financial.Content
+@using Financial.Internationalization
+@using Financial.Internationalization.Entities.Subscription
+
+@{
+    ViewBag.Title = SubscriptionEntityLabels.This_Edit_Title;
+}
+
+@using (Html.BeginRouteForm("EditSubscriptionPost", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.AntiForgeryToken()
+        <legend>
+            <span class="@Icons.Subscription fa-lg ico-padding text-primary"></span>@SubscriptionEntityLabels.This_Edit_Title
+        </legend>
+        @Html.HiddenFor(s => s.Id)
+        <div class="form-group">
+            @Html.LabelFor(s => s.Description, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(s => s.Description, new { @class = "form-control", placeholder = SubscriptionEntityLabels.Field_Description_Placeholder, autofocus = "" })
+                @Html.ValidationMessageFor(s => s.Description)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(s => s.SignatureDate, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(s => s.SignatureDate, new { @class = "form-control", type = "date", @Value = string.Format("{0:yyyy-MM-dd}", Model.SignatureDate) })
+                @Html.ValidationMessageFor(s => s.SignatureDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(s => s.CancellationDate, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(s => s.CancellationDate, new { @class = "form-control", type = "date", @Value = string.Format("{0:yyyy-MM-dd}", Model.CancellationDate) })
+                @Html.ValidationMessageFor(s => s.CancellationDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(s => s.Price, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                @Html.TextBoxFor(s => s.Price, new { @class = "form-control", type = "number", min = "0.01", max = "any", step = "0.01", @Value = Model.Price, placeholder = SubscriptionEntityLabels.Field_Price_Placeholder })
+                @Html.ValidationMessageFor(s => s.Price)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(s => s.CreditCardId, new { @class = "col-lg-2 control-label" })
+            <div class="col-lg-4">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="fa fa-credit-card-alt"></span>
+                    </span>
+                    @Html.DropDownListFor(s => s.CreditCardId, new SelectList(ViewBag.CreditCardList, "Id", "NickName"), Labels.None, new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(s => s.CreditCardId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="submit" class="btn btn-primary" title="@Labels.SaveChanges">
+                    <span class="@Icons.Save ico-padding" aria-hidden="true"></span>
+                    @Labels.SaveChanges
+                </button>
+            </div>
+        </div>
+
+    </fieldset>
+}

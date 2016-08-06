@@ -46,7 +46,7 @@ namespace Financial.DAO
         public override void Delete(Subscription entity)
         {
             this.Context.Subscriptions.Remove(entity);
-            this.Context.SaveChanges(); throw new NotImplementedException();
+            this.Context.SaveChanges(); 
         }
 
         public override Subscription GetById(Guid entityId, params Expression<Func<Subscription, object>>[] includes)

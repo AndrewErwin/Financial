@@ -106,6 +106,15 @@ namespace Financial.Internationalization.Entities.Subscription {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monthly Price.
+        /// </summary>
+        public static string Field_Price_Placeholder {
+            get {
+                return ResourceManager.GetString("Field_Price_Placeholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Signature Date.
         /// </summary>
         public static string Field_SignatureDate {

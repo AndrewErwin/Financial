@@ -132,6 +132,9 @@
   <data name="Field_Price" xml:space="preserve">
     <value>Price</value>
   </data>
+  <data name="Field_Price_Placeholder" xml:space="preserve">
+    <value>Monthly Price</value>
+  </data>
   <data name="Field_SignatureDate" xml:space="preserve">
     <value>Signature Date</value>
   </data>
