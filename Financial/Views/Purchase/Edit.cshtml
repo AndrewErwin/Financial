@@ -1,5 +1,6 @@
 ﻿@model Financial.Models.PurchaseFormModel
 
+@using Financial.Content
 @using Financial.Internationalization
 @using Financial.Internationalization.Entities.Purchase
 
@@ -13,7 +14,7 @@
         @Html.AntiForgeryToken()
         @Html.HiddenFor(p=>p.Id)
         <legend>
-            <span class="fa fa-shopping-cart ico-padding text-primary"></span>
+            <span class="@Icons.Purchase ico-padding text-primary"></span>
             @PurchaseEntityLabels.This_Edit_Title
         </legend>
 
@@ -54,7 +55,7 @@
             <div class="col-lg-4">
                 <div class="input-group">
                     <span class="input-group-addon">
-                        <span class="fa fa-credit-card-alt"></span>
+                        <span class="@Icons.CreditCard"></span>
                     </span>
                     @Html.DropDownListFor(p => p.CreditCardId, new SelectList(ViewBag.CreditCardList, "Id", "NickName"), Labels.None, new { @class = "form-control" })
                 </div>
@@ -65,7 +66,7 @@
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
                 <button type="submit" class="btn btn-primary" title="@Labels.Register">
-                    <span class="fa fa-floppy-o" aria-hidden="true"></span>
+                    <span class="@Icons.Save" aria-hidden="true"></span>
                     @Labels.SaveChanges
                 </button>
             </div>

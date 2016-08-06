@@ -1,5 +1,6 @@
 ﻿@model Financial.Models.CreditCardFormModel
 
+@using Financial.Content
 @using Financial.Internationalization
 @using Financial.Internationalization.Entities.CreditCard
 
@@ -11,7 +12,7 @@
 {
     <fieldset>
         @Html.AntiForgeryToken()
-        <legend><span class="fa fa-credit-card-alt ico-padding text-success"></span>@CreditCardEntityLabels.This_New_Title</legend>
+        <legend><span class="@Icons.CreditCard ico-padding text-success"></span>@CreditCardEntityLabels.This_New_Title</legend>
         <div class="form-group">
             @Html.LabelFor(c => c.Nickname, new { @class = "col-lg-2 control-label" })
             <div class="col-lg-4">

@@ -1,16 +1,17 @@
-﻿@using Financial.Internationalization
+﻿@using Financial.Content
+@using Financial.Internationalization
 
 <li>
     @if (WebSecurity.IsAuthenticated)
     {
         <a href="@Url.RouteUrl("SignOut")" title="@Labels.SignUp">
-            <span class="fa fa-sign-out ico-padding" aria-hidden="true"></span>@Labels.SignOut
+            <span class="@Icons.SignOut ico-padding" aria-hidden="true"></span>@Labels.SignOut
         </a>
     }
     else
     {
         <a href="@Url.RouteUrl("SignIn")" title="@Labels.SignIn">
-            <span class="fa fa-sign-in ico-padding" aria-hidden="true"></span>@Labels.SignIn
+            <span class="@Icons.SignIn ico-padding" aria-hidden="true"></span>@Labels.SignIn
         </a>
     }
 </li>

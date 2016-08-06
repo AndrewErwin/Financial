@@ -1,4 +1,5 @@
-﻿@using Financial.Internationalization
+﻿@using Financial.Content
+@using Financial.Internationalization
 
 @{
     ViewBag.Title = Labels.Home;
@@ -15,14 +16,14 @@
     @if (WebSecurity.IsAuthenticated)
     {
         <a href="@Url.RouteUrl("Start")" class="btn btn-default" title="@Labels.Start">
-            <span class="fa fa-home ico-padding" aria-hidden="true"></span>
+            <span class="@Icons.Home ico-padding" aria-hidden="true"></span>
             @Labels.Start
         </a>
     }
     else
     {
         <a href="@Url.RouteUrl("SignUp")" class="btn btn-success" title="@Labels.SignUp">
-            <span class="fa fa-users ico-padding" aria-hidden="true"></span>
+            <span class="@Icons.Users ico-padding" aria-hidden="true"></span>
             @Labels.SignUp
         </a>
         
@@ -31,7 +32,7 @@
         @:&nbsp;
 
         <a href="@Url.RouteUrl("SignIn")" class="btn btn-primary" title="@Labels.SignIn">
-            <span class="fa fa-sign-in ico-padding" aria-hidden="true"></span>
+            <span class="@Icons.SignIn ico-padding" aria-hidden="true"></span>
             @Labels.SignIn
         </a>
     }

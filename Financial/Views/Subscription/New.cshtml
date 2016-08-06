@@ -13,7 +13,7 @@
     <fieldset>
         @Html.AntiForgeryToken()
         <legend>
-            <span class="@Icons.Subscription fa-lg ico-padding text-success"></span>@SubscriptionEntityLabels.This_New_Title
+            <span class="@Icons.Subscription @Icons.LargeIcon ico-padding text-success"></span>@SubscriptionEntityLabels.This_New_Title
         </legend>
 
         <div class="form-group">
@@ -45,7 +45,7 @@
             <div class="col-lg-4">
                 <div class="input-group">
                     <span class="input-group-addon">
-                        <span class="fa fa-credit-card-alt"></span>
+                        <span class="@Icons.CreditCard"></span>
                     </span>
                     @Html.DropDownListFor(s => s.CreditCardId, new SelectList(ViewBag.CreditCardList, "Id", "NickName"), Labels.None, new { @class = "form-control" })
                 </div>

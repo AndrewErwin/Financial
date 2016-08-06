@@ -1,5 +1,6 @@
 ﻿@model List<Financial.Models.Entities.CreditCardNetwork>
 
+@using Financial.Content
 @using Financial.Internationalization
 @using Financial.Internationalization.Entities.CreditCardNetwork
 
@@ -10,7 +11,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4>
-            <span class="fa fa-credit-card-alt fa-lg ico-padding" aria-hidden="true"></span>@CCNetworkEntityLabels.This_List_Title
+            <span class="@Icons.CreditCard @Icons.LargeIcon ico-padding" aria-hidden="true"></span>@CCNetworkEntityLabels.This_List_Title
         </h4>
     </div>
     <div class="panel-body">
@@ -18,7 +19,7 @@
         <section class="row section-header-btns">
             <div class="col-lg-1">
                 <a href="@Url.RouteUrl("NewCreditCardNetwork")" class="btn btn-success btn-sm" title="@Labels.New @CCNetworkEntityLabels.This">
-                    <span class="fa fa-plus ico-padding" aria-hidden="true"></span>@Labels.New
+                    <span class="@Icons.New ico-padding" aria-hidden="true"></span>@Labels.New
                 </a>
             </div>
             <div class="col-lg-11">
@@ -28,7 +29,7 @@
 
                     <div class="alert alert-dismissible alert-info alert-header-section">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <span class="fa fa-check ico-padding" aria-hidden="true"></span>                        
+                        <span class="@Icons.Check ico-padding" aria-hidden="true"></span>                        
                         <a href="#@(new_network.Id)" class="alert-link">@CCNetworkEntityLabels.Message_New.Replace("%n", new_network.DisplayName)</a>
                     </div>
                 }
@@ -38,7 +39,7 @@
                     
                     <div class="alert alert-dismissible alert-info alert-header-section">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <span class="fa fa-floppy-o ico-padding" aria-hidden="true"></span>
+                        <span class="@Icons.Save ico-padding" aria-hidden="true"></span>
                         <a href="#@(new_network.Id)" class="alert-link">@CCNetworkEntityLabels.Message_Modified.Replace("%n", new_network.DisplayName)</a>
                     </div>
                 }
@@ -46,7 +47,7 @@
                 {                    
                     <div class="alert alert-dismissible alert-warning alert-header-section">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <span class="fa fa-exclamation-triangle ico-padding" aria-hidden="true"></span>
+                        <span class="@Icons.Error ico-padding" aria-hidden="true"></span>
                         @CCNetworkEntityLabels.NotFoundById.Replace("%i", TempData["network_not_found"].ToString())
                     </div>
                 }
@@ -75,7 +76,7 @@
                                     <td class="text-center text-middle"><img src="~/Content/images/ccnetworks/@network.ImageName" title="@network.DisplayName" /></td>
                                     <td class="text-center text-middle">
                                         <a href="@Url.RouteUrl("EditCreditCardNetwork", new { id = network.Id })" class="btn btn-primary btn-sm" title="@Labels.Edit">
-                                            <span class="fa fa-pencil" aria-hidden="true"></span>
+                                            <span class="@Icons.Edit" aria-hidden="true"></span>
                                             <span class="sr-only">@Labels.Edit</span>
                                         </a>
                                     </td>

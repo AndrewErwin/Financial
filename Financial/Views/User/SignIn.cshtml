@@ -1,5 +1,6 @@
 ﻿@model Financial.Models.UserLoginModel
 
+@using Financial.Content
 @using Financial.Internationalization
 @using Financial.Internationalization.Entities.User
 
@@ -11,7 +12,7 @@
 {
     <fieldset>
         <legend>
-            <span class="fa fa-user ico-padding text-default" aria-hidden="true"></span>
+            <span class="@Icons.User ico-padding text-default" aria-hidden="true"></span>
             @Labels.SignIn
         </legend>
 
@@ -39,7 +40,7 @@
                     @Html.ValidationMessage("invalid_login", new { @class = "label label-warning" })
                 </p>
                 <button type="submit" class="btn btn-default">
-                    <span class="fa fa-sign-in ico-padding" aria-hidden="true"></span>
+                    <span class="@Icons.SignIn ico-padding" aria-hidden="true"></span>
                     @Labels.SignIn
                 </button>
             </div>
