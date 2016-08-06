@@ -67,15 +67,11 @@ namespace Financial.Controllers
         [Route("Purchase/Edit/{id}", Name = "EditPurchase")]
         public ActionResult Edit(String id)
         {
-            Guid purchaseId = Guid.Empty;
-            if (Guid.TryParse(id, out purchaseId))
+            Purchase purchase = purchaseDAO.GetById(purchaseDAO.TryParseToEntityId(id));
+            if (purchase != null)
             {
-                Purchase purchase = purchaseDAO.GetById(purchaseId);
-                if (purchase != null)
-                {
-                    ViewBag.CreditCardList = creditCardDAO.List();
-                    return View(Mapper.Map<PurchaseFormModel>(purchase));
-                }
+                ViewBag.CreditCardList = creditCardDAO.List();
+                return View(Mapper.Map<PurchaseFormModel>(purchase));
             }
 
             TempData["purchase_not_found"] = id;
@@ -103,14 +99,10 @@ namespace Financial.Controllers
         [Route("Purchase/Delete/{id}", Name = "DeletePurchase")]
         public ActionResult Delete(String id)
         {
-            Guid purchaseId = Guid.Empty;
-            if (Guid.TryParse(id, out purchaseId))
+            Purchase purchase = purchaseDAO.GetById(purchaseDAO.TryParseToEntityId(id));
+            if (purchase != null)
             {
-                Purchase purchase = purchaseDAO.GetById(purchaseId);
-                if (purchase != null)
-                {
-                    return View(Mapper.Map<AnyGuidConfirmDelete>(purchase));
-                }
+                return View(Mapper.Map<AnyGuidConfirmDelete>(purchase));
             }
 
             TempData["purchase_not_found"] = id;

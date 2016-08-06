@@ -38,21 +38,19 @@ namespace Financial.Controllers
         [Route("Details/CreditCard/{id}/invoice/{month}/{year}")]
         [Route("Details/CreditCard/{id}/invoice/{month}")]
         [Route("Details/CreditCard/{id}")]
-        [Route("CreditCard/Details/{id}/invoice/{month}/{year}", Name="DetailsInvoiceCreditCard")]
+        [Route("CreditCard/Details/{id}/invoice/{month}/{year}", Name = "DetailsInvoiceCreditCard")]
         [Route("CreditCard/Details/{id}/invoice/{month}")]
         [Route("CreditCard/Details/{id}", Name = "DetailsCreditCard")]
         public ActionResult Details(String id, int? month, int? year)
         {
-            Guid cardId = Guid.Empty;
-            if (Guid.TryParse(id, out cardId))
+
+            CreditCard creditCard = creditCardDAO.GetById(creditCardDAO.TryParseToEntityId(id), c => c.Network);
+            if (creditCard != null)
             {
-                CreditCard creditCard = creditCardDAO.GetById(cardId, c => c.Network);
-                if (creditCard != null)
-                {
-                    ViewData.Add("Invoice", creditCardDAO.GetInvoice(creditCard.Id, month, year));
-                    return View(creditCard);
-                }
+                ViewData.Add("Invoice", creditCardDAO.GetInvoice(creditCard.Id, month, year));
+                return View(creditCard);
             }
+
             TempData["card_not_found"] = id;
             return RedirectToRoute("ListCreditCards");
         }
@@ -87,15 +85,11 @@ namespace Financial.Controllers
         [Route("CreditCard/Edit/{id}", Name = "EditCreditCard")]
         public ActionResult Edit(String id)
         {
-            Guid cardId = Guid.Empty;
-            if (Guid.TryParse(id, out cardId))
+            CreditCard creditCard = creditCardDAO.GetById(creditCardDAO.TryParseToEntityId(id));
+            if (creditCard != null)
             {
-                CreditCard creditCard = creditCardDAO.GetById(cardId);
-                if (creditCard != null)
-                {
-                    ViewBag.NetworkList = ccnetworkDAO.List();
-                    return View(Mapper.Map<CreditCardFormModel>(creditCard));
-                }
+                ViewBag.NetworkList = ccnetworkDAO.List();
+                return View(Mapper.Map<CreditCardFormModel>(creditCard));
             }
 
             TempData["card_not_found"] = id;
@@ -124,14 +118,10 @@ namespace Financial.Controllers
         [Route("CreditCard/Delete/{id}", Name = "DeleteCreditCard")]
         public ActionResult Delete(String id)
         {
-            Guid cardId = Guid.Empty;
-            if (Guid.TryParse(id, out cardId))
+            CreditCard creditCard = creditCardDAO.GetById(creditCardDAO.TryParseToEntityId(id));
+            if (creditCard != null)
             {
-                CreditCard creditCard = creditCardDAO.GetById(cardId);
-                if (creditCard != null)
-                {
-                    return View(Mapper.Map<AnyGuidConfirmDelete>(creditCard));
-                }
+                return View(Mapper.Map<AnyGuidConfirmDelete>(creditCard));
             }
 
             TempData["card_not_found"] = id;
