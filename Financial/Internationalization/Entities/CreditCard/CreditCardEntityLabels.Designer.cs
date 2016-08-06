@@ -205,6 +205,15 @@ namespace Financial.Internationalization.Entities.CreditCard {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Credit Card Details.
+        /// </summary>
+        public static string This_Details_Title {
+            get {
+                return ResourceManager.GetString("This_Details_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modify this Credit Card .
         /// </summary>
         public static string This_Edit_Title {
