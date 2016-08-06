@@ -117,8 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>fa fa-times</value>
+  </data>
+  <data name="Check" xml:space="preserve">
+    <value>fa fa-check</value>
+  </data>
   <data name="CreditCard" xml:space="preserve">
     <value>fa fa-credit-card-alt</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>fa fa-trash</value>
+  </data>
+  <data name="DeleteInverseColors" xml:space="preserve">
+    <value>fa fa-trash-o</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>fa fa-pencil</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>fa fa-exclamation-triangle</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>fa fa-home</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>fa fa-file-text-o</value>
+  </data>
+  <data name="LargeIcon" xml:space="preserve">
+    <value>fa-lg</value>
+  </data>
+  <data name="Money" xml:space="preserve">
+    <value>fa fa-money</value>
   </data>
   <data name="New" xml:space="preserve">
     <value>fa fa-plus</value>
@@ -129,7 +159,19 @@
   <data name="Save" xml:space="preserve">
     <value>fa fa-floppy-o</value>
   </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>fa fa-sign-in</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>fa fa-sign-out</value>
+  </data>
   <data name="Subscription" xml:space="preserve">
     <value>fa fa-barcode</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>fa fa-user</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>fa fa-users</value>
   </data>
 </root>
