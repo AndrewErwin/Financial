@@ -12,6 +12,14 @@ namespace Financial.DAO
     {
         public PurchaseDAO(FinancialContext context) : base(context) { }
 
+        public override Guid TryParseToEntityId(object id)
+        {
+            Guid entityId = Guid.Empty;
+            Guid.TryParse(id.ToString(), out entityId);
+
+            return entityId;
+        }
+
         public override List<Purchase> List(params System.Linq.Expressions.Expression<Func<Purchase, object>>[] includes)
         {
             var purchases = this.Context.Purchases;

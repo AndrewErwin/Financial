@@ -12,6 +12,14 @@ namespace Financial.DAO
     {
         public UserDAO(FinancialContext context) : base(context) { }
 
+        public override int TryParseToEntityId(object id)
+        {
+            int entityId = -1;
+            int.TryParse(id.ToString(), out entityId);
+
+            return entityId;
+        }
+
         public override List<User> List(params Expression<Func<User, object>>[] includes)
         {
             var users = this.Context.Users;

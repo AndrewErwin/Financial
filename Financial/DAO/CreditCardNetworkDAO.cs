@@ -12,6 +12,14 @@ namespace Financial.DAO
     {
         public CreditCardNetworkDAO(FinancialContext context) : base(context) { }
 
+        public override Guid TryParseToEntityId(object id)
+        {
+            Guid entityId = Guid.Empty;
+            Guid.TryParse(id.ToString(), out entityId);
+
+            return entityId;
+        }
+
         public override List<CreditCardNetwork> List(params Expression<Func<CreditCardNetwork, object>>[] includes)
         {
             var networks = this.Context.CreditCardNetworks;

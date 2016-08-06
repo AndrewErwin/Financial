@@ -13,6 +13,14 @@ namespace Financial.DAO
     {
         public SubscriptionDAO(FinancialContext context) : base(context) { }
 
+        public override Guid TryParseToEntityId(object id)
+        {
+            Guid entityId = Guid.Empty;
+            Guid.TryParse(id.ToString(), out entityId);
+
+            return entityId;
+        }
+
         public override List<Subscription> List(params Expression<Func<Subscription, object>>[] includes)
         {
             var subscriptions = this.Context.Subscriptions;

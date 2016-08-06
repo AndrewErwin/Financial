@@ -14,6 +14,7 @@ namespace Financial.DAO
             this.Context = context;
         }
 
+        public abstract I TryParseToEntityId(object id);
         public abstract List<T> List(params Expression<Func<T, object>>[] includes);
         public abstract void Add(T entity);
         public abstract void Update(T entity);
